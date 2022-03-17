@@ -1,16 +1,15 @@
 # ![](ressources/logo.jpeg) 
-# Introduction aux interfaces homme-machine (IHM) 
+# Développement d’applications avec IHM 
 
 ### IUT Montpellier-Sète – Département Informatique
 
 * **Enseignants:**
-  [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr),
-  [Cyrille Nadal](mailto:cyrille.nadal@umontpellier.fr),
-  [Nathalie Palleja](mailto:nathalie.palleja@umontpellier.fr),
-  [Xavier Palleja](mailto:xavier.palleja@umontpellier.fr),
-  [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
-
-  [Nihal Ouherrou](mailto:nihal.ouherrou@umontpellier.fr) -- responsable de la partie Ergonomie du cours,
+  * [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr),
+    [Cyrille Nadal](mailto:cyrille.nadal@umontpellier.fr),
+    [Nathalie Palleja](mailto:nathalie.palleja@umontpellier.fr),
+    [Xavier Palleja](mailto:xavier.palleja@umontpellier.fr),
+    [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
+  * [Nihal Ouherrou](mailto:nihal.ouherrou@umontpellier.fr) -- responsable de la partie _Ergonomie_ du cours,
 * [Email](mailto:sophie.nabitz@univ-avignon.fr) pour une question d'ordre privée concernant le cours.
 * Le forum Piazza (LIEN À AJOUTER) de ce cours pour poser vos questions
 
@@ -18,7 +17,7 @@
 
 ### Création de votre fork du TP
 
-Comme pour les TPs du cours "Développement Orienté Objets", vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm). Dans ce groupe vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
+Comme pour les TPs du cours "Développement Orienté Objets", vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
 
 Nous vous conseillons fortement de travailler avec IntelliJ IDEA. À vous de vous adapter si vous choisissez un autre IDE.
 
