@@ -49,9 +49,11 @@ Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisa
 ### Exercice 2 - Conteneurs BorderPane et HBox
 
 Vous devez écrire une application dont la fenêtre initiale est la suivante :
+
 ![](ressources/Exo2First.png)
 
 Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :
+
 ![](ressources/Exo2Second.png)
 
 Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
