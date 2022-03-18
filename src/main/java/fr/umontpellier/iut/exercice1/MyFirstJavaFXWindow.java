@@ -11,7 +11,7 @@ public class MyFirstJavaFXWindow extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("My First JavaFX Application");
+        primaryStage.setTitle("La page d'un Pro de JavaFX");
         primaryStage.show();
     }
 }

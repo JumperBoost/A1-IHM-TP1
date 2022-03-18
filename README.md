@@ -13,15 +13,59 @@
 * [Email](mailto:sophie.nabitz@univ-avignon.fr) pour une question d'ordre privée concernant le cours.
 * Le forum Piazza (LIEN À AJOUTER) de ce cours pour poser vos questions
 
-## TP 1 : Premiers pas avec JavaFX
-
-### Création de votre fork du TP
 
 Comme pour les TPs du cours "Développement Orienté Objets", vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe, vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
 
 Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez utiliser un autre IDE, et dans ce cas, ce sera vous de vous adapter.
 
 Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/).
+
+## TP 1 : Premiers pas avec JavaFX
+
+Rappelez-vous que JavaFX est un framework Java pour le développement des interfaces graphiques (GUI) en Java. Une GUI JavaFX est construite grâce à un graphe de scène, où les nœuds correspondent à un ensemble d'éléments graphiques organisés de manière hiérarchique. La scène (un objet de type `Scene`) est associée à une fenêtre qui correspond à un objet de type `Stage`.
+
+En principe, une application peut avoir plusieurs fenêtres, mais une est obligatoire -- la fenêtre principale (_primary stage_ en anglais). Celle-ci est fournie automatiquement par l'environnement d'exécution JavaFX. Ainsi l'exécution du code suivant lance une fenêtre vide et cachée (non visible à l'utilisateur) : 
+
+```java
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class MaPremiereClasseJavaFX extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        // le code pour enrichir votre fenêtre
+    }
+}
+```
+
+Notez que la méthode `main(String args[]` n'est pas nécessaire ici, car le point d'entrée d'une application JavaFX est la méthode `start(Stage primaryStage)`. En revanche, vous pouvez toujours ajouter une méthode `main(String args[]` car souvent, c'est plus pratique (par exemple, ajouter des paramètres à la ligne de commande).
+
+```java
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class MaPremiereClasseJavaFX extends Application {
+
+  public static void main(String[] args) {
+    // ici on peut passer des arguments à l'application JavaFX
+    Application.launch(args);
+  }
+  
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    // le code pour enrichir votre fenêtre
+    primaryStage.setTitle("La page d'un Pro de JavaFX !"); // titre de la fenêtre
+    primaryStage.show(); // rendre la fenêtre visible
+  }
+}
+```
+Dans le code ci-dessus la méthode statique `launch(String[] args)` va déclencher la méthode `start(Stage primaryStage)`. Notez que JavaFX est conçu de façon à ce que la méthode `launch(String[] args)` détecte correctement la méthode `start(Stage primaryStage)` à exécuter en fonction de la classe `Application` où `launch(String[] args)` a été lancée (dans l'exemple ci-dessus cette classe est `MaPremiereClasseJavaFX`).
+Sur Linux, la fenêtre suivante s'affiche :
+
+![](ressources/Premiere-page-javafx.png)
+
+Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le design de la fenêtre sera différente, car l'environnement JavaFX fait le travail nécessaire d'adaptation. Dans tous les cas, cette fenêtre contiendra une bare de titre et un emplacement pour afficher la scène.  
 
 ### Exercice 1 - Contrôles de base
 
