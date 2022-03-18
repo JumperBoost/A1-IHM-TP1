@@ -17,44 +17,44 @@
 
 ### Création de votre fork du TP
 
-Comme pour les TPs du cours "Développement Orienté Objets", vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
+Comme pour les TPs du cours "Développement Orienté Objets", vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe, vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
 
-Nous vous conseillons fortement de travailler avec IntelliJ IDEA. À vous de vous adapter si vous choisissez un autre IDE.
+Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez utiliser un autre IDE, et dans ce cas, ce sera vous de vous adapter.
 
 Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/).
 
 ### Exercice 1 - Contrôles de base
 
-Pour commencer simplement, nous allons construire une petite application graphique qui correspond au *"Bonjour à tous"* traditionnel...<br/>
+Pour commencer simplement, nous allons construire une petite application graphique qui correspond au *"Bonjour à tous"* traditionnel... <br/>
 A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement.
 
 1 - Lisez le contenu du fichier `MaFirstJavaFXWindow.java` et faites-le exécuter. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez les largeur et hauteur à 400 (`setWidth` et `setHeight`).
 
-2 - Dans la méthode `start`, instanciez un conteneur `VBox`, et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment`). Vous y ajouterez un `Label` dont le texte actuel est *"Bonjour à tous !"*.
-Déclarez ensuite une scène dans laquelle vous placerez votre conteneur, et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
+2 - Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur `VBox`, et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un `Label` dont le texte actuel est *"Bonjour à tous !"*.
+Déclarez ensuite une scène dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
 
-3 - Ajoutez maintenant un `TextField` qui permettra de saisir un nom, et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un `Button` construit avec le texte *"Dire bonjour"*.
+3 - Ajoutez maintenant un `TextField` qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un `Button` construit avec le texte *"Dire bonjour"*.
 
 4 - On va maintenant ajouter l'écouteur sur ce bouton, dans un premier temps sous la forme d'une lambda (```event -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du Label en *"Bonjour à toi, César"*, quand *César* a été saisi dans le `TextField`.
 
 5 - Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>` ; vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
 
-6 - Vous allez maintenant faire un peu de mise en forme...<br/>
+6 - Vous allez maintenant faire un peu de mise en forme... <br/>
 Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe `ImageView` construit avec cette <ul>
  [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/ressources/logo.jpeg) </ul>
-et utilisez la méthode `setGraphic` sur le bouton.<br/>
+et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et `ImageView` est une de ses nombreuses sous-classes.<br/>
 Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
 Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire exercice1.<br/>
 Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
 
 ### Exercice 2 - Conteneurs BorderPane et HBox
 
-Vous devez écrire une application dont la fenêtre initiale est la suivante :<center>
-![](ressources/Exo2First.png)</center>
-Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :<center>
-
-![](ressources/Exo2Second.png)</center>
-Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle`.
+Vous devez écrire une application dont la fenêtre initiale est la suivante :
+<div style="text-align: center;">
+![](ressources/Exo2First.png)</div>
+Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :
+<div style="text-align: center;">![](ressources/Exo2Second.png)</div>
+Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
 
 ### Exercice 3 - Conteneur GridPane
 
@@ -70,11 +70,11 @@ Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en u
 ### Exercice 4 - Utilisation de FXML
 
 Consultez les fichiers du package exercice4 : vous reconnaissez en partie le code du fichier `CounterMain.java`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice4"*.<br/>
-Le contenu de *"CounterView.fxml"* définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui même contenant 2 boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
+Le contenu de *"CounterView.fxml"* définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant 2 boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
 
 Complétez le fichier `CounterController.java` en déclarant les attributs correspondant aux éléments du fichier *fxml* et annotez-les @FXML. Initialisez le texte du `Label` avec la chaîne *"0"*.
 
-Ecrivez le code des deux méthodes `increment`et `decrement`, qui font varier la valeur de l'attribut counter, et modifient le texte du `Label`. Associez ces méthodes avec les éléments du fichier *fxml*, en ajoutant dans les balises appropriées les attributs `onAction="#increment"` et `onAction="#decrement"`.<br/>
+Écrivez le code des deux méthodes `increment()`et `decrement()`, qui font varier la valeur de l'attribut counter, et modifient le texte du `Label`. Associez ces méthodes avec les éléments du fichier *fxml*, en ajoutant dans les balises appropriées les attributs `onAction="#increment"` et `onAction="#decrement"`.<br/>
 
 Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en ajoutant dans la balise racine un attribut fx:controller de valeur le nom complet de la classe (c'est-à-dire en précisant aussi le package dans lequel elle est définie).
 
