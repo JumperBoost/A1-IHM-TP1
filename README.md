@@ -37,12 +37,11 @@ Déclarez ensuite une scène dans laquelle vous placerez votre conteneur et ajou
 
 4 - On va maintenant ajouter l'écouteur sur ce bouton, dans un premier temps sous la forme d'une lambda (```event -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du Label en *"Bonjour à toi, César"*, quand *César* a été saisi dans le `TextField`.
 
-5 - Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>` ; vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
+5 - Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
 
 6 - Vous allez maintenant faire un peu de mise en forme... <br/>
-Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe `ImageView` construit avec cette <ul>
- [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/ressources/logo.jpeg) </ul>
-et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et `ImageView` est une de ses nombreuses sous-classes.<br/>
+Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe `ImageView` construit avec cette
+ [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/ressources/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et `ImageView` est une de ses nombreuses sous-classes.<br/>
 Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
 Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire exercice1.<br/>
 Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
@@ -50,17 +49,18 @@ Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisa
 ### Exercice 2 - Conteneurs BorderPane et HBox
 
 Vous devez écrire une application dont la fenêtre initiale est la suivante :
-<div style="text-align: center;">
-![](ressources/Exo2First.png)</div>
+![](ressources/Exo2First.png)
+
 Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :
-<div style="text-align: center;">![](ressources/Exo2Second.png)</div>
+![](ressources/Exo2Second.png)
+
 Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
 
 ### Exercice 3 - Conteneur GridPane
 
-Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:<center>
+Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
 
-![](ressources/Exo3.png)</center>
+![](ressources/Exo3.png)
 
 Cette fenêtre est déplaçable, mais pas redimensionnable (`initStyle(StageStyle.UTILITY)`)
 Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire resources\exercice3.<br/>L'image à afficher sera choisie aléatoirement ; pour cela, vous pouvez faire générer un nombre en 0 et 2, à partir d'un objet `Random`:<ul>
@@ -82,14 +82,14 @@ Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en aj
 
 Constatez, dans le fichier `LoginControl.java`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
 
-Utilisez le SceneBuilder pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :<center>
+Utilisez le SceneBuilder pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
 
-![](ressources/Exo5.png)</center>
+![](ressources/Exo5.png)
 
 Le fichier *css* vous est fourni, il n'est pas nécessaire de le modifier. Vous l'associerez à votre contrôle en utilisant la possibilité du panneau Properties de la racine. 
 
 La totalité de la classe `LoginMain` vous est fournie, et vous devez compléter la classe `LoginControl` en déclarant les variables d'instance manquantes (qui correspondent aux éléments du fichier *fxml*) et en implémentant les actions des deux boutons.<br/>
-Un clic sur le bouton OK affiche sur la console le nom de l'utilisateur et une suite d'étoiles dont la longueur correspond au nombre de caractères du mot de passe, et un clic sur Cancel vide les deux champs.
+Un clic sur le bouton OK affiche sur la console le nom de l'utilisateur et une suite d'étoiles dont la longueur correspond au nombre de caractères du mot de passe, et un clic sur _Cancel_ vide les deux champs.
 
 ### Exercice 6 - Animations
 
