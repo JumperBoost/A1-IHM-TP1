@@ -34,7 +34,9 @@ Ainsi le répertoire **src/main/java** contiendra :
 Le répertoire **src/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques etc.
 
 
-Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/). Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version. Notez que JavaFX ne fait pas partie de l'API Java officielle, son développement actif ayant été externalisé depuis plusieurs années.
+Tout au long du TP, vous pouvez avoir besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/17/)**. Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version.
+
+Notez que depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé depuis plusieurs années dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main).
 
 ## TP 1 : Premiers pas avec JavaFX
 
