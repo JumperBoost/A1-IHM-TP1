@@ -22,7 +22,7 @@ Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documen
 
 ## TP 1 : Premiers pas avec JavaFX
 
-Rappelez-vous que JavaFX est un framework Java pour le développement des interfaces graphiques (GUI) en Java. Une GUI JavaFX est construite grâce à un graphe de scène, où les nœuds correspondent à un ensemble d'éléments graphiques organisés de manière hiérarchique. La scène (un objet de type `Scene`) est associée à une fenêtre qui correspond à un objet de type `Stage`.
+Rappelez-vous que JavaFX est un framework Java pour le développement des interfaces graphiques (GUI) en Java. Une GUI JavaFX est construite grâce à un graphe de scène, où les nœuds correspondent à un ensemble d'éléments graphiques organisés de manière hiérarchique. La scène (un objet de type [`Scene`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/Scene.html)) est associée à une fenêtre qui correspond à un objet de type [`Stage`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/stage/Stage.html).
 
 En principe, une application peut avoir plusieurs fenêtres, mais une est obligatoire -- la fenêtre principale (_primary stage_ en anglais). Celle-ci est fournie automatiquement par l'environnement d'exécution JavaFX. Ainsi l'exécution du code suivant lance une fenêtre vide et cachée (non visible à l'utilisateur) : 
 
@@ -65,7 +65,9 @@ Sur Linux, la fenêtre suivante s'affiche :
 
 ![](ressources/Premiere-page-javafx.png)
 
-Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le design de la fenêtre sera différente, car l'environnement JavaFX fait le travail nécessaire d'adaptation. Dans tous les cas, cette fenêtre contiendra une bare de titre et un emplacement pour afficher la scène.  
+Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le design de la fenêtre sera différent, l'environnement JavaFX faisant le travail nécessaire d'adaptation. Dans tous les cas, cette fenêtre contiendra une bare de titre et un emplacement pour afficher la scène.
+
+Dans les exercices qui vont suivre vous aller personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène.
 
 ### Exercice 1 - Contrôles de base
 
@@ -74,18 +76,18 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
 
 1 - Lisez le contenu du fichier `MaFirstJavaFXWindow.java` et faites-le exécuter. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez les largeur et hauteur à 400 (`setWidth` et `setHeight`).
 
-2 - Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur `VBox`, et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un `Label` dont le texte actuel est *"Bonjour à tous !"*.
-Déclarez ensuite une scène dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
+2 - Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
+Déclarez ensuite une [scène](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/Scene.html) dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
 
-3 - Ajoutez maintenant un `TextField` qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un `Button` construit avec le texte *"Dire bonjour"*.
+3 - Ajoutez maintenant un [`TextField`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
 
 4 - On va maintenant ajouter l'écouteur sur ce bouton, dans un premier temps sous la forme d'une lambda (```event -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du Label en *"Bonjour à toi, César"*, quand *César* a été saisi dans le `TextField`.
 
 5 - Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
 
 6 - Vous allez maintenant faire un peu de mise en forme... <br/>
-Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe `ImageView` construit avec cette
- [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/ressources/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et `ImageView` est une de ses nombreuses sous-classes.<br/>
+Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
+ [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/ressources/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
 Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
 Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire exercice1.<br/>
 Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
