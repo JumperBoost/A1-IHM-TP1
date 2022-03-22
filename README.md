@@ -16,25 +16,25 @@
 
 Comme pour les TPs du cours _Développement Orienté Objets_, vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe, vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
 
-Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez utiliser un autre IDE, et dans ce cas, ce sera à vous de vous adapter.
+Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez aussi utiliser un autre IDE, mais dans ce cas, ce sera à vous de vous adapter.
 
-Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/). Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version. Notez que JavaFX ne fait pas partie de l'API Java officielle, son développement actif ayant été externalisé depuis plusieurs années.
-
-Comme pour le cours _Développement Orienté Objets_, vous allez utiliser Maven comme système de build pour vos projets JavaFX. Voici la structure d'un projet JavaFX construit avec Maven :
+Également, comme pour le cours _Développement Orienté Objets_, vous allez utiliser [Maven](https://fr.wikipedia.org/wiki/Apache_Maven) comme système de build pour vos projets JavaFX. Voici la structure d'un projet JavaFX construit avec Maven :
 
 ![](ressources/Organisation-Maven-projet-JavaFX.png)
 
 Ainsi le répertoire **src/main/java** contiendra :
-   * L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
-   * Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables (_.jar_) légers en encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement de l'exécutable. En quelque sorte on peut les voir comme une abstraction de la notion de paquetage. Pour plus de détails :
-     * http://tutoriels.meddeb.net/modules-java-concepts/
-     * https://en.wikipedia.org/wiki/Java_Platform_Module_System
-     * https://en.wikipedia.org/wiki/Modular_programming
-     * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
-Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application
+* L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
+* Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables (_.jar_) légers en encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement de l'exécutable. En quelque sorte on peut les voir comme une abstraction de la notion de paquetage. Pour plus de détails :
+    * http://tutoriels.meddeb.net/modules-java-concepts/
+    * https://en.wikipedia.org/wiki/Java_Platform_Module_System
+    * https://en.wikipedia.org/wiki/Modular_programming
+    * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
+      Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application
 
 Le répertoire **src/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques etc.
- 
+
+
+Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/). Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version. Notez que JavaFX ne fait pas partie de l'API Java officielle, son développement actif ayant été externalisé depuis plusieurs années.
 
 ## TP 1 : Premiers pas avec JavaFX
 
@@ -97,9 +97,11 @@ Déclarez ensuite une [scène](https://javadoc.io/static/org.openjfx/javafx-fxml
 
 3. Ajoutez maintenant un [`TextField`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
 
-   1. On va maintenant ajouter l'écouteur sur ce bouton, dans un premier temps sous la forme d'une expression lambda (```event -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
+   1. Vous allez maintenant ajouter un [gestionnaire d'événement](https://openjfx.io/javadoc/17/javafx.base/javafx/event/EventHandler.html) sur ce bouton afin d'intercepter l'action de clic sur ce bouton et lui associer une action de réponse spécifique. Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda (```actionEvent -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
 
    2. Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
+   
+   3. Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche.
 
 4. Vous allez maintenant faire un peu de mise en forme... <br/>
 Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
