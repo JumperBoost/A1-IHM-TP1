@@ -14,11 +14,27 @@
 * Le forum Piazza (LIEN À AJOUTER) de ce cours pour poser vos questions
 
 
-Comme pour les TPs du cours "Développement Orienté Objets", vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe, vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
+Comme pour les TPs du cours _Développement Orienté Objets_, vous devrez ici aussi travailler dans un groupe [GitLab associé au cours d'IHM](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/). Dans ce groupe, vous aurez l'ensemble des forks des TPs et du projet qui apparaîtront au fur et à mesure.
 
 Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez utiliser un autre IDE, et dans ce cas, ce sera à vous de vous adapter.
 
-Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/). Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version. 
+Tout au long du TP, vous pouvez avoir besoin de **consulter les pages de documentation** de JavaFX, qui sont [disponibles ici](https://openjfx.io/javadoc/17/). Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version. Notez que JavaFX ne fait pas partie de l'API Java officielle, son développement actif ayant été externalisé depuis plusieurs années.
+
+Comme pour le cours _Développement Orienté Objets_, vous allez utiliser Maven comme système de build pour vos projets JavaFX. Voici la structure d'un projet JavaFX construit avec Maven :
+
+![](ressources/Organisation-Maven-projet-JavaFX.png)
+
+Ainsi le répertoire **src/main/java** contiendra :
+   * L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
+   * Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables (_.jar_) légers en encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement de l'exécutable. En quelque sorte on peut les voir comme une abstraction de la notion de paquetage. Pour plus de détails :
+     * http://tutoriels.meddeb.net/modules-java-concepts/
+     * https://en.wikipedia.org/wiki/Java_Platform_Module_System
+     * https://en.wikipedia.org/wiki/Modular_programming
+     * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
+Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application
+
+Le répertoire **src/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques etc.
+ 
 
 ## TP 1 : Premiers pas avec JavaFX
 
@@ -74,22 +90,22 @@ Dans les exercices qui vont suivre vous aller personnaliser votre fenêtre JavaF
 Pour commencer simplement, nous allons construire une petite application graphique qui correspond au *"Bonjour à tous"* traditionnel... <br/>
 A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement.
 
-1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice1` et faites-le exécuter. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez les largeur et hauteur à 400 (`setWidth` et `setHeight`).
+1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice1` et faites exécuter la méthoe `main(String args[])`. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez les largeur et hauteur à 400 (`setWidth` et `setHeight`).
 
-1. Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
+2. Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
 Déclarez ensuite une [scène](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/Scene.html) dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
 
-1. Ajoutez maintenant un [`TextField`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
+3. Ajoutez maintenant un [`TextField`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
 
-1. On va maintenant ajouter l'écouteur sur ce bouton, dans un premier temps sous la forme d'une expression lambda (```event -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du Label en *"Bonjour à toi, César"*, quand *César* a été saisi dans le `TextField`.
+   1. On va maintenant ajouter l'écouteur sur ce bouton, dans un premier temps sous la forme d'une expression lambda (```event -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
 
-1. Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
+   2. Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe.
 
-1. Vous allez maintenant faire un peu de mise en forme... <br/>
+4. Vous allez maintenant faire un peu de mise en forme... <br/>
 Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
  [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/ressources/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
 Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
-Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire exercice1.<br/>
+Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice1/_.<br/>
 Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
 
 ### Exercice 2 - Conteneurs BorderPane et HBox
