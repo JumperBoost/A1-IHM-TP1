@@ -1,4 +1,4 @@
-# ![](ressources/logo.jpeg) 
+# ![](images/logo.jpeg) 
 # Développement d’applications avec IHM 
 
 ### IUT Montpellier-Sète – Département Informatique
@@ -20,7 +20,7 @@ Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez au
 
 Également, comme pour le cours _Développement Orienté Objets_, vous allez utiliser [Maven](https://fr.wikipedia.org/wiki/Apache_Maven) comme système de build pour vos projets JavaFX. Voici la structure d'un projet JavaFX construit avec Maven :
 
-![](ressources/Organisation-Maven-projet-JavaFX.png)
+![](images/Organisation-Maven-projet-JavaFX.png)
 
 Ainsi le répertoire **src/main/java** contiendra :
 * L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
@@ -81,7 +81,7 @@ public class MaPremiereClasseJavaFX extends Application {
 Dans le code ci-dessus la méthode statique `launch(String[] args)` va déclencher la méthode `start(Stage primaryStage)`. Notez que JavaFX est conçu de façon à ce que la méthode `launch(String[] args)` détecte correctement la méthode `start(Stage primaryStage)` à exécuter en fonction de la classe `Application` où `launch(String[] args)` a été lancée (dans l'exemple ci-dessus cette classe est `MaPremiereClasseJavaFX`).
 Sur Linux, la fenêtre suivante s'affiche :
 
-![](ressources/Premiere-page-javafx.png)
+![](images/Premiere-page-javafx.png)
 
 Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le design de la fenêtre sera différent, l'environnement JavaFX faisant le travail nécessaire d'adaptation. Dans tous les cas, cette fenêtre contiendra une bare de titre et un emplacement pour afficher la scène.
 
@@ -116,11 +116,11 @@ Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisa
 
 Vous devez écrire une application dont la fenêtre initiale est la suivante :
 
-![](ressources/Exo2First.png)
+![](images/Exo2First.png)
 
 Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :
 
-![](ressources/Exo2Second.png)
+![](images/Exo2Second.png)
 
 Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
 
@@ -128,36 +128,38 @@ Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l
 
 Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
 
-![](ressources/Exo3.png)
+![](images/Exo3.png)
 
 Cette fenêtre est déplaçable, mais pas redimensionnable (`initStyle(StageStyle.UTILITY)`)
-Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire resources\exercice3.<br/>L'image à afficher sera choisie aléatoirement ; pour cela, vous pouvez faire générer un nombre en 0 et 2, à partir d'un objet `Random`:<ul>
-`Random random = new Random();`<br/>
-`int nombre = random.nextInt(3);`</ul>
+Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice3_. L'image à afficher sera choisie aléatoirement : pour cela, vous pouvez faire générer un nombre en 0 et 2, à partir d'un objet `Random`:
+```java
+Random random = new Random();
+int nombre = random.nextInt(3);
+```
 
 ### Exercice 4 - Utilisation de FXML
 
-Consultez les fichiers du package exercice4 : vous reconnaissez en partie le code du fichier `CounterMain.java`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice4"*.<br/>
-Le contenu de *"CounterView.fxml"* définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant 2 boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
+Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice4"*.<br/>
+Le contenu de *"CounterView.fxml"* définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant deux boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
 
 Complétez le fichier `CounterController.java` en déclarant les attributs correspondant aux éléments du fichier *fxml* et annotez-les @FXML. Initialisez le texte du `Label` avec la chaîne *"0"*.
 
 Écrivez le code des deux méthodes `increment()`et `decrement()`, qui font varier la valeur de l'attribut counter, et modifient le texte du `Label`. Associez ces méthodes avec les éléments du fichier *fxml*, en ajoutant dans les balises appropriées les attributs `onAction="#increment"` et `onAction="#decrement"`.<br/>
 
-Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en ajoutant dans la balise racine un attribut fx:controller de valeur le nom complet de la classe (c'est-à-dire en précisant aussi le package dans lequel elle est définie).
+Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en ajoutant dans la balise racine un attribut `fx:controller` de valeur égale au nom complet de la classe (c'est-à-dire en précisant aussi le package dans lequel elle est définie).
 
 ### Exercice 5 - Création de l'IHM en FXML et SceneBuilder
 
-Constatez, dans le fichier `LoginControl.java`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
+Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
 
-Utilisez le SceneBuilder pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
+Utilisez le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
 
-![](ressources/Exo5.png)
+![](images/Exo5.png)
 
-Le fichier *css* vous est fourni, il n'est pas nécessaire de le modifier. Vous l'associerez à votre contrôle en utilisant la possibilité du panneau Properties de la racine. 
+Le fichier *CSS* vous est fourni, il n'est pas nécessaire de le modifier. Vous l'associerez à votre contrôle en utilisant la possibilité du panneau _Properties_ de la racine. 
 
-La totalité de la classe `LoginMain` vous est fournie, et vous devez compléter la classe `LoginControl` en déclarant les variables d'instance manquantes (qui correspondent aux éléments du fichier *fxml*) et en implémentant les actions des deux boutons.<br/>
-Un clic sur le bouton OK affiche sur la console le nom de l'utilisateur et une suite d'étoiles dont la longueur correspond au nombre de caractères du mot de passe, et un clic sur _Cancel_ vide les deux champs.
+La totalité de la classe `LoginMain` vous est fournie, et vous devez compléter la classe `LoginControl` en déclarant les attributs manquants (qui correspondent aux éléments du fichier *fxml*) et en implémentant les actions des deux boutons.<br/>
+Un clic sur le bouton _OK_ affiche sur la console le nom de l'utilisateur et une suite d'étoiles dont la longueur correspond au nombre de caractères du mot de passe, et un clic sur _Cancel_ vide les deux champs.
 
 ### Exercice 6 - Animations
 
