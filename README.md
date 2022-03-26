@@ -171,3 +171,51 @@ Un clic sur le bouton _OK_ affiche sur la console le nom de l'utilisateur et une
 ### Exercice 6 - Animations
 
 Regardez (et exécutez) le code fourni dans la classe `Animation`, et transformez-le pour que l'image fasse le tour de la fenêtre, puis revienne automatiquement en sens inverse.
+
+### Exercice 7 - Jeu de type PacMan.
+
+**Objectif :** afficher un pacman, un fantôme, les faire se déplacer au clavier, détecter les éventuelles collisions.
+
+**Diagramme de classes :**
+
+![](images/exo7/pacmandiagclasses.jpg)
+
+- Un objet de type _Pacman_ sera un **Personnage** qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
+
+- Un objet de type _Fantome_ sera un **Personnage** qui comporte _un bas de corps, un corps, un oeil gauche, une rétine gauche, un oeil droit et une rétine droite_, les rétines seront orientées en fonction de sa direction.
+
+- Les objets de type **Fantome** et **Pacman** pourront se déplacer dans les 4 directions du plan de jeu avec des touches différentes du clavier, ils ne peuvent _pas sortir du plan de jeu_.
+
+- Il sera possible de **détecter la collision** entre deux personnages (ou éléments du jeu) se touchant.
+
+- La classe JeuMain est chargée de lancer le jeu dans une fenêtre 640*480, chaque personnage est pour l’instant stocké dans un carré de 20 pixels de côté.
+
+Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
+
+
+**Etat initial :**
+![](images/exo7/jeuinitial.jpg)
+
+**Le pacman s’est déplacé à droite**
+![](images/exo7/pacman2.jpg)
+
+**Puis repart vers la gauche**
+![](images/exo7/pacman3.jpg)
+
+1 - **Complétez** la classe Pacman afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront UP,DOWN,LEFT et RIGHT
+![](images/exo7/pacmanbas.jpg) ![](images/exo7/pacmanhaut.jpg)
+
+2 - **Complétez** la classe Fantome afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z,S,Q et D. Les yeux du fantome suivront la direction comme cela :
+![](images/exo7/fantomes.jpg)
+
+3 - Pour l’instant la collision _affiche un message dans la console_, trouvez un moyen de **stopper le jeu** lorsque cela se produit
+
+4 - Pour aller plus loin **ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu. Le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
+
+5 - Imaginez la suite …
+
+
+
+
+
+
