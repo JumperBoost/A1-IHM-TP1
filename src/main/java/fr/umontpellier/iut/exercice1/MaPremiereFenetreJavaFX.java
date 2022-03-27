@@ -3,7 +3,7 @@ package fr.umontpellier.iut.exercice1;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class MaPremierFenetreJavaFX extends Application {
+public class MaPremiereFenetreJavaFX extends Application {
 
     public static void main(String[] args) {
         launch(args);
