@@ -180,15 +180,15 @@ Regardez (et exécutez) le code fourni dans la classe `Animation`, et transforme
 
 ![](images/exo7/pacmandiagclasses.jpg)
 
-- Un objet de type _Pacman_ sera un **Personnage** qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
+- Un objet de type `Pacman` sera un `Personnage` qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
 
-- Un objet de type _Fantome_ sera un **Personnage** qui comporte _un bas de corps, un corps, un œil gauche, une rétine gauche, un œil droit et une rétine droite_, les rétines seront orientées en fonction de sa direction.
+- Un objet de type `Fantome` sera un `Personnage` qui comporte _un bas de corps_, _un corps_, _un œil gauche_, _une rétine gauche_, _un œil droit_ et _une rétine droite_, les rétines seront orientées en fonction de sa direction.
 
-- Les objets de type **Fantome** et **Pacman** pourront se déplacer dans les 4 directions du plan de jeu avec des touches différentes du clavier, ils ne peuvent _pas sortir du plan de jeu_.
+- Les objets de type `Fantome` et `Pacman` pourront se déplacer dans les 4 directions du plan de jeu avec des touches différentes du clavier, ils ne peuvent _pas sortir du plan de jeu_.
 
 - Il sera possible de **détecter la collision** entre deux personnages (ou éléments du jeu) se touchant.
 
-- La classe JeuMain est chargée de lancer le jeu dans une fenêtre 640*480, chaque personnage est pour l’instant stocké dans un carré de 20 pixels de côté.
+- La classe `JeuMain` est chargée de lancer le jeu dans une fenêtre 640*480, chaque personnage est pour l’instant stocké dans un carré de 20 pixels de côté.
 
 Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
 
@@ -213,9 +213,9 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 ![](images/exo7/fantomes.jpg)
 
-3 - Pour l’instant la collision _affiche un message dans la console_, trouvez un moyen de **stopper le jeu** lorsque cela se produit
+3 - Pour l’instant la collision affiche un message dans la console. Trouvez un moyen de **stopper le jeu** lorsque une collision se produit.
 
-4 - **Ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu.
+4 - **Ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu.<br>
 **Algo à mettre en place** 
 
 - Créez un ou des **obstacles** (nouvelle classe `Obstacle` héritant de `Rectangle`) et stockez-les dans `JeuMain` (Arraylist static...)
