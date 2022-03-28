@@ -18,7 +18,7 @@ class Personnage extends Group {
         if (this.getLayoutX() >= LARGEUR_PERSONNAGE) {
             this.setLayoutX(this.getLayoutX() - LARGEUR_PERSONNAGE);
         }
-        if (direction != "gauche") {
+        if (!direction.equals("gauche")) {
             direction = "gauche";
         }
     }
@@ -33,7 +33,7 @@ class Personnage extends Group {
         if (this.getLayoutX() < largeurJeu - LARGEUR_PERSONNAGE) {
             this.setLayoutX(this.getLayoutX() + LARGEUR_PERSONNAGE);
         }
-        if (direction != "droite") {
+        if (!direction.equals("droite")) {
             direction = "droite";
         }
     }

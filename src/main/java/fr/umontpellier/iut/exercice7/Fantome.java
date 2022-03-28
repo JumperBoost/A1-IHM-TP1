@@ -19,7 +19,6 @@ public class Fantome extends Personnage {
 
 
     public Fantome() {
-        super();
         //un fantôme est composé d'un rectangle avec au-dessus un cercle puis des yeux ;)
         basCorps = new Rectangle(0, 10, 20, 10);
         basCorps.setFill(Paint.valueOf("blue"));
