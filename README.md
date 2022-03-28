@@ -182,7 +182,7 @@ Regardez (et exécutez) le code fourni dans la classe `Animation`, et transforme
 
 - Un objet de type _Pacman_ sera un **Personnage** qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
 
-- Un objet de type _Fantome_ sera un **Personnage** qui comporte _un bas de corps, un corps, un oeil gauche, une rétine gauche, un oeil droit et une rétine droite_, les rétines seront orientées en fonction de sa direction.
+- Un objet de type _Fantome_ sera un **Personnage** qui comporte _un bas de corps, un corps, un œil gauche, une rétine gauche, un œil droit et une rétine droite_, les rétines seront orientées en fonction de sa direction.
 
 - Les objets de type **Fantome** et **Pacman** pourront se déplacer dans les 4 directions du plan de jeu avec des touches différentes du clavier, ils ne peuvent _pas sortir du plan de jeu_.
 
@@ -193,7 +193,7 @@ Regardez (et exécutez) le code fourni dans la classe `Animation`, et transforme
 Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
 
 
-**Etat initial :**
+**État initial :**
 
 ![](images/exo7/jeuinitial.jpg)
 
@@ -205,11 +205,11 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 ![](images/exo7/pacman3.jpg)
 
-1 - **Complétez** la classe Pacman afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront les touches du clavier UP, DOWN, LEFT et RIGHT
+1 - **Complétez** la classe `Pacman` afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront les touches du clavier UP, DOWN, LEFT et RIGHT
 
 ![](images/exo7/pacmanbas.jpg) ![](images/exo7/pacmanhaut.jpg)
 
-2 - **Complétez** la classe Fantome afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z, S, Q et D. Les yeux du fantôme suivront la direction comme cela :
+2 - **Complétez** la classe `Fantome` afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z, S, Q et D. Les yeux du fantôme suivront la direction comme cela :
 
 ![](images/exo7/fantomes.jpg)
 
@@ -218,8 +218,8 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 4 - **Ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu.
 **Algo à mettre en place** 
 
-- Créez un ou des **obstacles** (nouvelle classe Obstacle héritant de Rectangle) et les _stocker_ dans JeuMain (Arraylist static...)
-- Lors du déplacement d'un **Personnage** (haut, bas, droite ou gauche), _sauvegardez_ sa position (x et y), faites le _déplacement voulu_, _détectez_ une collision avec un obstacle (détection de collision avec un des obstacles), si collision _détectée_ **repositionnez** le personnage avec les coordonnées sauvegardées.
+- Créez un ou des **obstacles** (nouvelle classe `Obstacle` héritant de `Rectangle`) et stockez-les dans `JeuMain` (Arraylist static...)
+- Lors du déplacement d'un `Personnage` (haut, bas, droite ou gauche), _sauvegardez_ sa position (`x` et `y`), faites le _déplacement voulu_, _détectez_ une collision avec un obstacle (détection de collision avec un des obstacles), si collision _détectée_ **repositionnez** le personnage avec les coordonnées sauvegardées.
 
 
 ![](images/exo7/pacmanObstacle.jpg)

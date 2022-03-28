@@ -20,10 +20,10 @@ public class Fantome extends Personnage {
 
     public Fantome() {
         super();
-        //un fantome est composé d'un rectangle avec au dessus un cercle puis des yeux ;)
+        //un fantôme est composé d'un rectangle avec au-dessus un cercle puis des yeux ;)
         basCorps = new Rectangle(0, 10, 20, 10);
         basCorps.setFill(Paint.valueOf("blue"));
-        corps = new Circle(10, 10, LARGEURMOITIEPERSONNAGE, Color.BLUE);
+        corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, Color.BLUE);
 
         oeilGauche = new Circle(6, 6, 2, Color.WHITE);
         //regarde vers la droite

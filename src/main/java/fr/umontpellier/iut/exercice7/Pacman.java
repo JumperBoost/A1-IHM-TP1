@@ -13,9 +13,9 @@ public class Pacman extends Personnage {
 
     public Pacman() {
         super();
-        corps = new Circle(10, 10, LARGEURMOITIEPERSONNAGE, Color.BLACK);
+        corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, Color.BLACK);
         corps.setFill(Paint.valueOf("yellow"));
-        bouche = new Line(LARGEURMOITIEPERSONNAGE, LARGEURMOITIEPERSONNAGE, LARGEURMOITIEPERSONNAGE * 2, LARGEURMOITIEPERSONNAGE);
+        bouche = new Line(LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE * 2, LARGEUR_MOITIE_PERSONNAGE);
         bouche.setFill(Paint.valueOf("black"));
         direction = "droite";
 
@@ -27,7 +27,7 @@ public class Pacman extends Personnage {
     public void directionGauche() {
         super.directionGauche();
         //sens de la bouche
-        bouche.setEndX(bouche.getStartX() - LARGEURMOITIEPERSONNAGE);
+        bouche.setEndX(bouche.getStartX() - LARGEUR_MOITIE_PERSONNAGE);
         bouche.setEndY(bouche.getStartY());
     }
 
@@ -35,7 +35,7 @@ public class Pacman extends Personnage {
     public void directionDroite(double largeurJeu) {
         super.directionDroite(largeurJeu);
         //sens de la bouche
-        bouche.setEndX(bouche.getStartX() + LARGEURMOITIEPERSONNAGE);
+        bouche.setEndX(bouche.getStartX() + LARGEUR_MOITIE_PERSONNAGE);
         bouche.setEndY(bouche.getStartY());
     }
 

@@ -3,8 +3,8 @@ package fr.umontpellier.iut.exercice7;
 import javafx.scene.Group;
 
 class Personnage extends Group {
-    final static double LARGEURMOITIEPERSONNAGE = 10;
-    final static double LARGEURPERSONNAGE = LARGEURMOITIEPERSONNAGE * 2;
+    protected final static double LARGEUR_MOITIE_PERSONNAGE = 10;
+    protected final static double LARGEUR_PERSONNAGE = LARGEUR_MOITIE_PERSONNAGE * 2;
     protected String direction;
 
     void directionGauche() {
@@ -15,8 +15,8 @@ class Personnage extends Group {
         //    ****
 
         //déplacement <----
-        if (this.getLayoutX() >= LARGEURPERSONNAGE) {
-            this.setLayoutX(this.getLayoutX() - LARGEURPERSONNAGE);
+        if (this.getLayoutX() >= LARGEUR_PERSONNAGE) {
+            this.setLayoutX(this.getLayoutX() - LARGEUR_PERSONNAGE);
         }
         if (direction != "gauche") {
             direction = "gauche";
@@ -30,8 +30,8 @@ class Personnage extends Group {
         //   *    *
         //    ****
         //déplacement ---->
-        if (this.getLayoutX() < largeurJeu - LARGEURPERSONNAGE) {
-            this.setLayoutX(this.getLayoutX() + LARGEURPERSONNAGE);
+        if (this.getLayoutX() < largeurJeu - LARGEUR_PERSONNAGE) {
+            this.setLayoutX(this.getLayoutX() + LARGEUR_PERSONNAGE);
         }
         if (direction != "droite") {
             direction = "droite";

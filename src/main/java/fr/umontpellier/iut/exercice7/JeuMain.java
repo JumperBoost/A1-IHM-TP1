@@ -20,7 +20,7 @@ public class JeuMain extends Application {
         //Acteurs du jeu
         Personnage pacman = new Pacman();
         Personnage fantome = new Fantome();
-        // on positionne le fantome 20 positions vers la droite
+        // on positionne le fantôme 20 positions vers la droite
         fantome.setLayoutX(20 * 10);
         //panneau du jeu
         Pane jeu = new Pane();
