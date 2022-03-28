@@ -205,11 +205,11 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 ![](images/exo7/pacman3.jpg)
 
-1 - **Complétez** la classe Pacman afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront UP,DOWN,LEFT et RIGHT
+1 - **Complétez** la classe Pacman afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront les touches du clavier UP, DOWN, LEFT et RIGHT
 
 ![](images/exo7/pacmanbas.jpg) ![](images/exo7/pacmanhaut.jpg)
 
-2 - **Complétez** la classe Fantome afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z,S,Q et D. Les yeux du fantome suivront la direction comme cela :
+2 - **Complétez** la classe Fantome afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z, S, Q et D. Les yeux du fantôme suivront la direction comme cela :
 
 ![](images/exo7/fantomes.jpg)
 
