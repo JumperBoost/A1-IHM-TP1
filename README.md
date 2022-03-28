@@ -215,7 +215,12 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 3 - Pour l’instant la collision _affiche un message dans la console_, trouvez un moyen de **stopper le jeu** lorsque cela se produit
 
-4 - **Ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu. 
+4 - **Ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu.
+**Algo à mettre en place** 
+
+- Créez un ou des **obstacles** (nouvelle classe Obstacle héritant de Rectangle) et les _stocker_ dans JeuMain (Arraylist static...)
+- Lors du déplacement d'un **Personnage** (haut, bas, droite ou gauche), _sauvegardez_ sa position (x et y), faites le _déplacement voulu_, _détectez_ une collision avec un obstacle (détection de collision avec un des obstacles), si collision _détectée_ **repositionnez** le personnage avec les coordonnées sauvegardées.
+
 
 ![](images/exo7/pacmanObstacle.jpg)
 
