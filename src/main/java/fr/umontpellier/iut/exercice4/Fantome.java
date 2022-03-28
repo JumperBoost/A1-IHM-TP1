@@ -40,8 +40,6 @@ public class Fantome extends Personnage {
         this.getChildren().add(retineGauche);
         this.getChildren().add(oeilDroit);
         this.getChildren().add(retineDroite);
-
-
     }
 
     @Override
@@ -56,12 +54,12 @@ public class Fantome extends Personnage {
     }
 
     @Override
-    void directionBas(double hauteurJeu) {
+    public void directionBas(double hauteurJeu) {
 
     }
 
     @Override
-    void directionHaut() {
+    public void directionHaut() {
 
     }
 

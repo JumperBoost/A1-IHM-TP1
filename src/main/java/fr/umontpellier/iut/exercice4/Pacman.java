@@ -40,13 +40,13 @@ public class Pacman extends Personnage {
     }
 
     @Override
-    void directionBas(double hauteurJeu) {
-
+    public void directionBas(double hauteurJeu) {
+        // à compléter
     }
 
     @Override
-    void directionHaut() {
-
+    public void directionHaut() {
+        // à compléter
     }
 
 }

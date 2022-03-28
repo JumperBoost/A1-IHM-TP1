@@ -7,7 +7,7 @@ class Personnage extends Group {
     protected final static double LARGEUR_PERSONNAGE = LARGEUR_MOITIE_PERSONNAGE * 2;
     protected String direction;
 
-    void directionGauche() {
+    public void directionGauche() {
         //    ****
         //   *    *
         //  *---   *
@@ -23,7 +23,7 @@ class Personnage extends Group {
         }
     }
 
-    void directionDroite(double largeurJeu) {
+    public void directionDroite(double largeurJeu) {
         //    ****
         //   *    *
         //  *   ---*
@@ -38,7 +38,7 @@ class Personnage extends Group {
         }
     }
 
-    void directionBas(double hauteurJeu) {
+    public void directionBas(double hauteurJeu) {
         //    *****
         //   *     *
         //  *   |   *
@@ -47,7 +47,7 @@ class Personnage extends Group {
 
     }
 
-    void directionHaut() {
+    public void directionHaut() {
         //    *****
         //   *  |  *
         //  *   |   *

@@ -27,13 +27,7 @@ public class Animation extends Application {
 
 //        SequentialTransition st = new SequentialTransition(transition1, transition2, transition3, transition4, transition5);
 
-        customButton.setOnMousePressed(new EventHandler<MouseEvent>() {
-                                         @Override
-                                         public void handle(MouseEvent mouseEvent) {
-                                             transition1.play();
-                                         }
-                                     }
-        );
+        customButton.setOnMousePressed(mouseEvent -> transition1.play());
 
         primaryStage.setTitle("Animation");
         primaryStage.setScene(scene);

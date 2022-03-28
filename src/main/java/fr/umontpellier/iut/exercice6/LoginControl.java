@@ -8,7 +8,7 @@ import java.io.IOException;
 public class LoginControl extends GridPane {
 
     public LoginControl() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("exercice5/LoginView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("exercice6/LoginView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
