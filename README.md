@@ -215,10 +215,11 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 3 - Pour l’instant la collision _affiche un message dans la console_, trouvez un moyen de **stopper le jeu** lorsque cela se produit
 
-4 - Pour aller plus loin **ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu. Le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
+4 - **Ajoutez des obstacles infranchissables** (murs, etc), faites en sorte de placer le pacman et le fantôme aux extrémités du jeu. 
 
-5 - **Imaginez** la suite …
+![](images/exo7/pacmanObstacle.jpg)
 
+5 - **Imaginez** une suite, un mode de jeu rapide par exemple le jeu se lance, le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
 
 
 
