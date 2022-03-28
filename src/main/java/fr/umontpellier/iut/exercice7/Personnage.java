@@ -57,7 +57,8 @@ class Personnage extends Group {
     }
 
     boolean collision(Personnage autrePersonnage) {
-        return this.getBoundsInParent().contains(autrePersonnage.getBoundsInParent());
+        return this.getBoundsInParent().contains(autrePersonnage.getBoundsInParent())
+                || autrePersonnage.getBoundsInParent().contains(this.getBoundsInParent());
     }
 
 }
