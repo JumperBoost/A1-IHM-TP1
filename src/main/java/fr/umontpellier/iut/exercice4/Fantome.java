@@ -1,4 +1,4 @@
-package fr.umontpellier.iut.exercice7;
+package fr.umontpellier.iut.exercice4;
 
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
