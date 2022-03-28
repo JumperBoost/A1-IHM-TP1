@@ -31,12 +31,12 @@ Ainsi le répertoire **src/main/java** contiendra :
     * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
       Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application
 
-Le répertoire **src/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques etc.
+Le répertoire **src/main/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques, etc.
 
 
-Tout au long du TP, vous pouvez avoir besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/17/)**. Dans ce cours, nous allons travailler sur la version 17 de JavaFX. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version.
+Tout au long du TP, vous pouvez avoir besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/17/)**. Dans ce cours, nous allons travailler sur la **version 17 de JavaFX**. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version.
 
-Notez que depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé depuis plusieurs années dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main).
+Notez que depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main).
 
 ## TP 1 : Premiers pas avec JavaFX
 
@@ -78,7 +78,7 @@ public class MaPremiereClasseJavaFX extends Application {
   }
 }
 ```
-Dans le code ci-dessus la méthode statique `launch(String[] args)` va déclencher la méthode `start(Stage primaryStage)`. Notez que JavaFX est conçu de façon à ce que la méthode `launch(String[] args)` détecte correctement la méthode `start(Stage primaryStage)` à exécuter en fonction de la classe `Application` où `launch(String[] args)` a été lancée (dans l'exemple ci-dessus cette classe est `MaPremiereClasseJavaFX`).
+Dans le code ci-dessus la méthode statique `launch(String[] args)` va déclencher la méthode dynamique `start(Stage primaryStage)`. Notez que JavaFX est conçu de façon à ce que la méthode `launch(String[] args)` détecte correctement la méthode `start(Stage primaryStage)` à exécuter en fonction de la classe héritant de `Application` où `launch(String[] args)` a été lancée (dans l'exemple ci-dessus cette classe est `MaPremiereClasseJavaFX`).
 Sur Linux, la fenêtre suivante s'affiche :
 
 ![](images/Premiere-page-javafx.png)
@@ -194,7 +194,7 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 5 - **Imaginez** une suite, un mode de jeu rapide par exemple le jeu se lance, le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
 
-### Partie 2 - FXML
+## Partie 2 - FXML
 
 Comme vous l'avez pu constater dans les exercices précédents, l'intégralité du code d'organisation des composants graphiques et les traitements correspondants étaient définies dans le même bloc de code Java. Par exemple, pour le jeu Pacman de l'exercice 4, la classe `JeuMain` gérait à la fois les composants principaux du graphe de scène du jeu, mais aussi la gestion des mouvements des personnages. Cette approche (dite _procédurale_) marche tant que le code de l'IHM n'est pas trop complexe. Mais le code deviendra ingérable dès que votre IHM contiendra des nombreux composants graphiques (potentiellement imbriqués), avec beaucoup de code de traitement associé.
 
