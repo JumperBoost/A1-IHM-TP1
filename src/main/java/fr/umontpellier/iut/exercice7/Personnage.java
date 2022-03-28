@@ -3,8 +3,8 @@ package fr.umontpellier.iut.exercice7;
 import javafx.scene.Group;
 
 class Personnage extends Group {
-    final double LARGEURMOITIEPERSONNAGE = 10;
-    final double LARGEURPERSONNAGE = LARGEURMOITIEPERSONNAGE * 2;
+    final static double LARGEURMOITIEPERSONNAGE = 10;
+    final static double LARGEURPERSONNAGE = LARGEURMOITIEPERSONNAGE * 2;
     protected String direction;
 
     void directionGauche() {
