@@ -109,7 +109,7 @@ Déclarez ensuite une [scène](https://javadoc.io/static/org.openjfx/javafx-fxml
 
 4. Vous allez maintenant faire un peu de mise en forme... <br/>
 Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
- [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/TP1/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
+ [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/blob/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
 Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
 Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice1/_.<br/>
 Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
@@ -146,7 +146,7 @@ int nombre = random.nextInt(3);
 
 **Diagramme de classes :**
 
-![](images/exo7/pacmandiagclasses.jpg)
+![](images/exo4/pacmandiagclasses.jpg)
 
 - Un objet de type `Pacman` sera un `Personnage` qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
 
@@ -163,23 +163,23 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 **État initial :**
 
-![](images/exo7/jeuinitial.jpg)
+![](images/exo4/jeuinitial.jpg)
 
 **Le pacman s’est déplacé à droite**
 
-![](images/exo7/pacman2.jpg)
+![](images/exo4/pacman2.jpg)
 
 **Puis repart vers la gauche**
 
-![](images/exo7/pacman3.jpg)
+![](images/exo4/pacman3.jpg)
 
 1 - **Complétez** la classe `Pacman` afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront les touches du clavier UP, DOWN, LEFT et RIGHT
 
-![](images/exo7/pacmanbas.jpg) ![](images/exo7/pacmanhaut.jpg)
+![](images/exo4/pacmanbas.jpg) ![](images/exo4/pacmanhaut.jpg)
 
 2 - **Complétez** la classe `Fantome` afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z, S, Q et D. Les yeux du fantôme suivront la direction comme cela :
 
-![](images/exo7/fantomes.jpg)
+![](images/exo4/fantomes.jpg)
 
 3 - Pour l’instant la collision affiche un message dans la console. Trouvez un moyen de **stopper le jeu** lorsque une collision se produit.
 
@@ -190,19 +190,22 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 - Lors du déplacement d'un `Personnage` (haut, bas, droite ou gauche), _sauvegardez_ sa position (`x` et `y`), faites le _déplacement voulu_, _détectez_ une collision avec un obstacle (détection de collision avec un des obstacles), si collision _détectée_ **repositionnez** le personnage avec les coordonnées sauvegardées.
 
 
-![](images/exo7/pacmanObstacle.jpg)
+![](images/exo4/pacmanObstacle.jpg)
 
 5 - **Imaginez** une suite, un mode de jeu rapide par exemple le jeu se lance, le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
 
 ### Partie 2 - FXML
 
+Comme vous l'avez pu constater dans les exercices précédents, l'intégralité du code d'organisation des composants graphiques et les traitements correspondants sont définies dans le même bloc de code Java. Par exemple, pour le jeu Pacman ci-dessus, la classe `JeuMain` gère à la fois les composants principaux du graphe de scène du jeu, mais aussi la gestion des mouvements des personnages. Bien entendu, le code risque de s'alourdir lorsque l'IHM évolue et devient plus complexe.
 
-### Exercice 5 - Utilisation de FXML
 
 Rappelons qu'un des avantages d'utiliser JavaFX est la possibilité de décrire les interfaces graphiques de manière déclarative dans un langage dérivé du XML -- le FXML. Le graphe de scène ayant une structure arborescente, la description de celui-ci en XML est assez intuitive.
 
 Utiliser le FXML permet de séparer la logique de construction de l'interface utilisateur (_UI_), du code métier de l'application (_business logic_). Cette séparation devient très vite utile (voire nécessaire) lorsque la fenêtre a beaucoup de composants graphiques (potentiellement imbriqués), auxquels sont attachés des écouteurs.
 
+Dans cette partie nous allons construire des interfaces graphiques en utilisant le FXML.
+
+### Exercice 5 - Utilisation de FXML
 
 Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice4"*.<br/>
 Le contenu de `CounterView.fxml` définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre est un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant deux boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
@@ -219,7 +222,7 @@ Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau c
 
 Vous aller utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
 
-![](images/Exo5.png)
+![](images/Exo6.png)
 
 Pour ouvrir le fichier *fxml* avec [SceneBuilder](https://gluonhq.com/products/scene-builder/) dans IntelliJ IDEA : clic droit sur le fichier *fxml* &rightarrow; *Open in SceneBuilder*. Si vous utilisez le SceneBuilder pour la première fois, il faut indiquer à l'IDE le chemin d'accès à l'exécutable de ce logiciel. À l'IUT, sur les postes Linux, il réside dans `/opt/scenebuilder/bin/`. Si vous êtes sur votre machine personnelle, il faudrait que vous installiez d'abord  [SceneBuilder](https://gluonhq.com/products/scene-builder/) et ensuite indiquiez à l'IDE le chemin d'accès.
 
