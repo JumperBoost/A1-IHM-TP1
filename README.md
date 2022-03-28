@@ -29,7 +29,8 @@ Ainsi le répertoire **src/main/java** contiendra :
     * https://en.wikipedia.org/wiki/Java_Platform_Module_System
     * https://en.wikipedia.org/wiki/Modular_programming
     * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
-      Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application
+
+Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application. Notez que pour le moment vous n'allez pas écrire des tests unitaires pour tester vos IHM, donc le répertoire **src/main/test** risque de ne pas être créé par l'IDE. Au moment où voudrez ajouter des tests unitaires, vous aurez éventuellement crée ce répertoire.
 
 Le répertoire **src/main/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques, etc.
 
