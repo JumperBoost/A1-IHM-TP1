@@ -24,18 +24,22 @@ Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez au
 
 Ainsi le répertoire **src/main/java** contiendra :
 * L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
-* Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables (_.jar_) légers en encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement de l'exécutable. En quelque sorte on peut les voir comme une abstraction de la notion de paquetage. Pour plus de détails :
+* Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables légers (_.jar_) en y encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement. En quelque sorte on peut les voir comme une abstraction de la notion de paquetage. Pour plus de détails :
     * http://tutoriels.meddeb.net/modules-java-concepts/
     * https://en.wikipedia.org/wiki/Java_Platform_Module_System
     * https://en.wikipedia.org/wiki/Modular_programming
     * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
 
-Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application. Notez que pour le moment vous n'allez pas écrire des tests unitaires pour tester vos IHM, donc le répertoire **src/main/test** risque de ne pas être créé par l'IDE. Au moment où voudrez ajouter des tests unitaires, vous aurez éventuellement crée ce répertoire.
+Le répertoire **src/main/resources** contiendra l'ensemble de ressources du projet : images, feuilles de styles CSS, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques, etc.
 
-Le répertoire **src/main/resources** contiendra l'ensemble de ressources du projet : feuilles de styles CSS, images, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques, etc.
+Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application. Notez que pour le moment vous n'allez pas écrire des tests unitaires pour tester vos IHM, donc le répertoire **src/main/test** n'apparaîtra pas pour le moment dans vos projets. Au moment où voudrez ajouter des tests unitaires, vous aurez éventuellement à créer ce répertoire.
 
 
-Tout au long du TP, vous pouvez avoir besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/17/)**. Dans ce cours, nous allons travailler sur la **version 17 de JavaFX**. Si vous travaillez sur votre machine personnelle, pensez à installer la bonne version.
+Tout au long du TP, vous aurez besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/17/)**. Dans ce cours, nous allons travailler sur la **version 17 de Java et JavaFX**. Sur les machines du département tout est déjà installé et configuré. Si vous travaillez sur votre machine personnelle, pensez à installer les bonnes versions.
+
+#### Consignes installation sur machine personnelle
+
+Pour installer JavaFX sur votre machine, on vous recommande de télécharger la SDK complète : https://gluonhq.com/products/javafx/. Sur Linux, il suffit d'extraire l'archive contenant la SDK dans votre répertoire d'installation, par exemple dans `/opt`. Lors de la première utilisation de JavaFX avec votre IDE, vous devriez indiquer le chemin d'accès à la SDK JavaFX sur votre machine. 
 
 Notez que depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main).
 
