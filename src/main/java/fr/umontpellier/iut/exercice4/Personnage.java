@@ -15,8 +15,8 @@ class Personnage extends Group {
         //    ****
 
         //déplacement <----
-        if (this.getLayoutX() >= LARGEUR_PERSONNAGE) {
-            this.setLayoutX(this.getLayoutX() - LARGEUR_PERSONNAGE);
+        if (getLayoutX() >= LARGEUR_PERSONNAGE) {
+            setLayoutX(getLayoutX() - LARGEUR_PERSONNAGE);
         }
         if (!direction.equals("gauche")) {
             direction = "gauche";
@@ -30,8 +30,8 @@ class Personnage extends Group {
         //   *    *
         //    ****
         //déplacement ---->
-        if (this.getLayoutX() < largeurJeu - LARGEUR_PERSONNAGE) {
-            this.setLayoutX(this.getLayoutX() + LARGEUR_PERSONNAGE);
+        if (getLayoutX() < largeurJeu - LARGEUR_PERSONNAGE) {
+            setLayoutX(getLayoutX() + LARGEUR_PERSONNAGE);
         }
         if (!direction.equals("droite")) {
             direction = "droite";
@@ -57,8 +57,8 @@ class Personnage extends Group {
     }
 
     boolean collision(Personnage autrePersonnage) {
-        return this.getBoundsInParent().contains(autrePersonnage.getBoundsInParent())
-                || autrePersonnage.getBoundsInParent().contains(this.getBoundsInParent());
+        return getBoundsInParent().contains(autrePersonnage.getBoundsInParent())
+                || autrePersonnage.getBoundsInParent().contains(getBoundsInParent());
     }
 
 }

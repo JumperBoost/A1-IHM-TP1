@@ -12,7 +12,6 @@ public class Pacman extends Personnage {
 
 
     public Pacman() {
-        super();
         corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, Color.BLACK);
         corps.setFill(Paint.valueOf("yellow"));
         bouche = new Line(LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE * 2, LARGEUR_MOITIE_PERSONNAGE);
