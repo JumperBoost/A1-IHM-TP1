@@ -10,10 +10,10 @@ public class CounterController implements Initializable {
 
     int counter = 0;
 
-    public void increment(ActionEvent actionEvent) {
+    public void increment() {
     }
 
-    public void decrement(ActionEvent actionEvent) {
+    public void decrement() {
     }
 
     @Override
