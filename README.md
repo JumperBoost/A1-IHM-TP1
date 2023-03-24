@@ -10,6 +10,7 @@
       [Nathalie Palleja](mailto:nathalie.palleja@umontpellier.fr),
       [Xavier Palleja](mailto:xavier.palleja@umontpellier.fr),
       [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
+* Le [forum Piazza](https://piazza.com/class/ld2tzi5k82via) de ce cours pour poser vos questions
 * [Email](mailto:petru.valicov@umontpellier.fr) pour une question d'ordre privée concernant le cours.
 
 
@@ -89,7 +90,7 @@ Sur Linux, la fenêtre suivante s'affiche :
 
 Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le design de la fenêtre sera différent, l'environnement JavaFX faisant le travail nécessaire d'adaptation. Dans tous les cas, cette fenêtre contiendra une barre de titre et un emplacement pour afficher la scène.
 
-### Partie 1 - Le graphe de scène et quelques événements
+## Partie 1 - Le graphe de scène et quelques événements
 
 Dans les exercices de cette partie vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène.
 
