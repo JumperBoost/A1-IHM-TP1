@@ -23,10 +23,10 @@ Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez au
 
 Ainsi le répertoire **src/main/java** contiendra :
 * L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
-* Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables légers (_.jar_) en y encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement. En quelque sorte on peut les voir comme une abstraction de la notion de paquetage. Pour plus de détails :
-    * http://tutoriels.meddeb.net/modules-java-concepts/
+* Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables légers (_.jar_) en y encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement. En quelque sorte, on peut les voir comme une généralisation de la notion de paquetage. Pour plus de détails :
     * https://en.wikipedia.org/wiki/Java_Platform_Module_System
     * https://en.wikipedia.org/wiki/Modular_programming
+    * https://www.baeldung.com/java-9-modularity
     * https://www.oracle.com/fr/corporate/features/understanding-java-9-modules.html
 
 Le répertoire **src/main/resources** contiendra l'ensemble de ressources du projet : images, feuilles de styles CSS, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques, etc.
@@ -34,17 +34,17 @@ Le répertoire **src/main/resources** contiendra l'ensemble de ressources du pro
 Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application. Notez que pour le moment vous n'allez pas écrire des tests unitaires pour tester vos IHM, donc le répertoire **src/main/test** n'apparaîtra pas pour le moment dans vos projets. Au moment où voudrez ajouter des tests unitaires, vous aurez éventuellement à créer ce répertoire.
 
 
-Tout au long du TP, vous aurez besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/17/)**. Dans ce cours, nous allons travailler sur la **version 17 de Java et JavaFX**. Sur les machines du département tout est déjà installé et configuré. Si vous travaillez sur votre machine personnelle, pensez à installer les bonnes versions.
+Tout au long du TP, vous aurez besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/18/)**. Dans ce cours, nous allons travailler sur la **version 17 de Java et version 18 de JavaFX**. Sur les machines du département tout est déjà installé et configuré. Si vous travaillez sur votre machine personnelle, pensez à installer les bonnes versions.
 
 #### Consignes installation sur machine personnelle
 
 Notez que depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main).
 
-C'est pour cela que la librairie JavaFX n'est pas automatiquement installée avec la plateforme Java. Pour installer JavaFX sur votre machine, on vous recommande de télécharger la SDK complète : https://gluonhq.com/products/javafx/. Sur Linux, il suffit d'extraire l'archive contenant la SDK dans votre répertoire d'installation, par exemple dans `/opt`. Lors de la première utilisation de JavaFX avec votre IDE, vous devriez indiquer le chemin d'accès à la SDK JavaFX sur votre machine. 
+C'est pour cela que la librairie JavaFX n'est pas automatiquement installée avec la plateforme Java. Pour installer JavaFX sur votre machine, on vous recommande de télécharger la SDK complète : https://gluonhq.com/products/javafx/. Sur Linux, il suffit d'extraire l'archive contenant la SDK dans votre répertoire d'installation, par exemple dans `/opt`. Lors de la première utilisation de JavaFX avec votre IDE, vous devriez indiquer le chemin d'accès à la SDK JavaFX sur votre machine.
 
 ## TP 1 : Premiers pas avec JavaFX
 
-Rappelez-vous que JavaFX est un framework Java pour le développement des interfaces graphiques (GUI) en Java. Une GUI JavaFX est construite grâce à un graphe de scène, où les nœuds correspondent à un ensemble d'éléments graphiques organisés de manière hiérarchique. La scène (un objet de type [`Scene`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/Scene.html)) est associée à une fenêtre qui correspond à un objet de type [`Stage`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/stage/Stage.html).
+Rappelez-vous que JavaFX est un framework Java pour le développement des interfaces graphiques (GUI) en Java. Une GUI JavaFX est construite grâce à un graphe de scène, où les nœuds correspondent à un ensemble d'éléments graphiques organisés de manière hiérarchique. La scène (un objet de type [`Scene`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/Scene.html)) est associée à une fenêtre qui correspond à un objet de type [`Stage`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/stage/Stage.html).
 
 En principe, une application peut avoir plusieurs fenêtres, mais une est obligatoire -- la fenêtre principale (_primary stage_ en anglais). Celle-ci est fournie automatiquement par l'environnement d'exécution JavaFX. Ainsi l'exécution du code suivant lance une fenêtre vide et cachée (non visible à l'utilisateur) :
 
@@ -91,7 +91,7 @@ Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le de
 
 ### Partie 1 - Le graphe de scène et quelques événements
 
-Dans les exercices de cette partie vous aller personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène.
+Dans les exercices de cette partie vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène.
 
 ### Exercice 1 - Contrôles de base
 
@@ -100,20 +100,20 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
 
 1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice1` et faites exécuter la méthode `main(String args[])`. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez les largeur et hauteur à 400 (`setWidth` et `setHeight`).
 
-2. Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
-   Déclarez ensuite une [scène](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/Scene.html) dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
+2. Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
+   Déclarez ensuite une [scène](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/Scene.html) dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
 
-3. Ajoutez maintenant un [`TextField`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
+3. Ajoutez maintenant un [`TextField`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/TextField.htmlcontrol/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
 
-    1. Vous allez maintenant ajouter un [gestionnaire d'événement](https://openjfx.io/javadoc/17/javafx.base/javafx/event/EventHandler.html) sur ce bouton afin d'intercepter l'action de clic sur ce bouton et lui associer une action de réponse spécifique. Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda (```actionEvent -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
+    1. Vous allez maintenant ajouter un [gestionnaire d'événement](https://openjfx.io/javadoc/18/javafx.base/javafx/event/EventHandler.html) sur ce bouton afin d'intercepter l'action de clic sur ce bouton et lui associer une action de réponse spécifique. Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda (```actionEvent -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
 
     2. Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
 
     3. Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche.
 
 4. Vous allez maintenant faire un peu de mise en forme... <br/>
-   Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
-   [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/raw/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://javadoc.io/static/org.openjfx/javafx-fxml/17-ea+5/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
+   Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
+   [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/blob/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
    Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
    Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice1/_.<br/>
    Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
@@ -206,11 +206,11 @@ Par ailleurs, rappelons qu'un des avantages d'utiliser JavaFX est la possibilit�
 
 Ainsi, utiliser le FXML permet de séparer la logique de construction de l'interface utilisateur (_UI_), du code métier de l'application (_business logic_). Cette séparation devient très vite utile (voire nécessaire) lorsque la fenêtre a beaucoup de composants graphiques (potentiellement imbriqués), auxquels sont attachés des écouteurs. De plus, décrire les interfaces devient plus simple avec FXML comparé à l'approche procédurale.
 
-Dans cette partie nous allons voir comment construire des interfaces graphiques en utilisant le FXML.
+Dans cette partie, nous allons voir comment construire des interfaces graphiques en utilisant le FXML.
 
 ### Exercice 5 - Utilisation de FXML
 
-Consultez les classes du paquetage `exercice5` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice5"*.<br/>
+Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice4"*.<br/>
 Le contenu de `CounterView.fxml` définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre est un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant deux boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
 
 Complétez la classe `CounterController` en déclarant les attributs correspondant aux éléments du fichier *fxml* et annotez-les avec `@FXML`. Initialisez le texte du `Label` avec la chaîne *"0"*.
@@ -223,7 +223,7 @@ Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en aj
 
 Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
 
-Vous aller utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
+Vous allez utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
 
 ![](images/Exo6.png)
 
