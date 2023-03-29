@@ -93,14 +93,14 @@ Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le de
 
 ## Partie 1 - Le graphe de scène et quelques événements
 
-Dans les exercices de cette partie vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène.
+Dans les exercices de cette partie vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène. Pensez à consulter le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) pour vous aider dans chaque question.
 
 ### Exercice 1 - Contrôles de base
 
 Pour commencer simplement, nous allons construire une petite application graphique qui correspond au *"Bonjour à tous"* traditionnel... <br/>
-A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement.
+A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement sur votre dépôt GitLab.
 
-1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice1` et faites exécuter la méthode `main(String args[])`. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez les largeur et hauteur à 400 (`setWidth` et `setHeight`).
+1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice1` et faites exécuter la méthode `main(String args[])`. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez la largeur et la hauteur à 400 (`setWidth` et `setHeight`).
 
 2. Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
    Déclarez ensuite une [scène](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/Scene.html) dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
