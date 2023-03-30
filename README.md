@@ -150,19 +150,22 @@ int nombre = random.nextInt(3);
 
 **Objectif :** afficher un pacman, un fantôme, les faire se déplacer au clavier, détecter les éventuelles collisions.
 
-**Diagramme de classes :**
+Dans un jeu PacMan les personnages ont tous un corps sous forme de cercle.
 
-![](images/exo4/pacmandiagclasses.png)
+- Un objet de type `Pacman` sera un `Personnage` qui comporte _une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
 
-- Un objet de type `Pacman` sera un `Personnage` qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
-
-- Un objet de type `Fantome` sera un `Personnage` qui comporte _un bas de corps_, _un corps_, _un œil gauche_, _une rétine gauche_, _un œil droit_ et _une rétine droite_, les rétines seront orientées en fonction de sa direction.
+- Un objet de type `Fantome` sera un `Personnage` qui comporte _un bas de corps_, _un œil gauche_, _une rétine gauche_, _un œil droit_ et _une rétine droite_, les rétines seront orientées en fonction de sa direction.
 
 - Les objets de type `Fantome` et `Pacman` pourront se déplacer dans les 4 directions du plan de jeu avec des touches différentes du clavier, ils ne peuvent _pas sortir du plan de jeu_.
 
 - Il sera possible de **détecter la collision** entre deux personnages (ou éléments du jeu) se touchant.
 
 - La classe `JeuMain` est chargée de lancer le jeu dans une fenêtre 640*480, chaque personnage est pour l’instant stocké dans un carré de 20 pixels de côté.
+
+**Diagramme de classes :**
+
+![](images/exo4/pacmandiagclasses.png)
+
 
 Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
 
