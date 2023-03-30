@@ -1,25 +1,19 @@
 package fr.umontpellier.iut.exercice4;
 
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
 public class Pacman extends Personnage {
 
-    private Circle corps;
     private Line bouche;
 
 
     public Pacman() {
-        super("droite");
-        corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, Color.BLACK);
-        corps.setFill(Paint.valueOf("yellow"));
+        super("droite", Color.BLACK, Color.YELLOW);
         bouche = new Line(LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE * 2, LARGEUR_MOITIE_PERSONNAGE);
-        bouche.setFill(Paint.valueOf("black"));
+        bouche.setFill(Color.BLACK);
 
-        this.getChildren().add(corps);
-        this.getChildren().add(bouche);
+        super.getChildren().add(bouche);
     }
 
     @Override
