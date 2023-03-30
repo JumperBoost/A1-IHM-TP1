@@ -5,9 +5,13 @@ import javafx.scene.Group;
 class Personnage extends Group {
     protected final static double LARGEUR_MOITIE_PERSONNAGE = 10;
     protected final static double LARGEUR_PERSONNAGE = LARGEUR_MOITIE_PERSONNAGE * 2;
-    protected String direction;
+    private String direction;
 
-    public void directionGauche() {
+    public Personnage(String direction) {
+        this.direction = direction;
+    }
+
+    public void deplacerAGauche() {
         //    ****
         //   *    *
         //  *---   *
@@ -23,7 +27,7 @@ class Personnage extends Group {
         }
     }
 
-    public void directionDroite(double largeurJeu) {
+    public void deplacerADroite(double largeurJeu) {
         //    ****
         //   *    *
         //  *   ---*
@@ -38,7 +42,7 @@ class Personnage extends Group {
         }
     }
 
-    public void directionBas(double hauteurJeu) {
+    public void deplacerEnBas(double hauteurJeu) {
         //    *****
         //   *     *
         //  *   |   *
@@ -47,7 +51,7 @@ class Personnage extends Group {
 
     }
 
-    public void directionHaut() {
+    public void deplacerEnHaut() {
         //    *****
         //   *  |  *
         //  *   |   *
@@ -56,7 +60,7 @@ class Personnage extends Group {
 
     }
 
-    boolean collision(Personnage autrePersonnage) {
+    boolean estEnCollision(Personnage autrePersonnage) {
         return getBoundsInParent().contains(autrePersonnage.getBoundsInParent())
                 || autrePersonnage.getBoundsInParent().contains(getBoundsInParent());
     }

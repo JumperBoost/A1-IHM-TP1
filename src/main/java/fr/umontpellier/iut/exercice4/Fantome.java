@@ -19,20 +19,20 @@ public class Fantome extends Personnage {
 
 
     public Fantome() {
-        //un fantôme est composé d'un rectangle avec au-dessus un cercle puis des yeux ;)
+        super("droite");
+        // un fantôme est composé d'un rectangle avec au-dessus un cercle puis des yeux ;)
         basCorps = new Rectangle(0, 10, 20, 10);
         basCorps.setFill(Paint.valueOf("blue"));
         corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, Color.BLUE);
 
         oeilGauche = new Circle(6, 6, 2, Color.WHITE);
-        //regarde vers la droite
+        // regarde vers la droite
         retineGauche = new Circle(oeilGauche.getCenterX() + 1, 6, 1, Color.BLACK);
 
         oeilDroit = new Circle(14, 6, 2, Color.WHITE);
-        //regarde vers la droite
+        // regarde vers la droite
         retineDroite = new Circle(oeilDroit.getCenterX() + 1, 6, 1, Color.BLACK);
 
-        direction = "droite";
 
         this.getChildren().add(basCorps);
         this.getChildren().add(corps);
@@ -43,23 +43,23 @@ public class Fantome extends Personnage {
     }
 
     @Override
-    public void directionGauche() {
+    public void deplacerAGauche() {
 
 
     }
 
     @Override
-    public void directionDroite(double largeurJeu) {
+    public void deplacerADroite(double largeurJeu) {
 
     }
 
     @Override
-    public void directionBas(double hauteurJeu) {
+    public void deplacerEnBas(double hauteurJeu) {
 
     }
 
     @Override
-    public void directionHaut() {
+    public void deplacerEnHaut() {
 
     }
 

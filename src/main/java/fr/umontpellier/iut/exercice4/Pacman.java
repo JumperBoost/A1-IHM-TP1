@@ -12,39 +12,39 @@ public class Pacman extends Personnage {
 
 
     public Pacman() {
+        super("droite");
         corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, Color.BLACK);
         corps.setFill(Paint.valueOf("yellow"));
         bouche = new Line(LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE * 2, LARGEUR_MOITIE_PERSONNAGE);
         bouche.setFill(Paint.valueOf("black"));
-        direction = "droite";
 
         this.getChildren().add(corps);
         this.getChildren().add(bouche);
     }
 
     @Override
-    public void directionGauche() {
-        super.directionGauche();
+    public void deplacerAGauche() {
+        super.deplacerAGauche();
         //sens de la bouche
         bouche.setEndX(bouche.getStartX() - LARGEUR_MOITIE_PERSONNAGE);
         bouche.setEndY(bouche.getStartY());
     }
 
     @Override
-    public void directionDroite(double largeurJeu) {
-        super.directionDroite(largeurJeu);
+    public void deplacerADroite(double largeurJeu) {
+        super.deplacerADroite(largeurJeu);
         //sens de la bouche
         bouche.setEndX(bouche.getStartX() + LARGEUR_MOITIE_PERSONNAGE);
         bouche.setEndY(bouche.getStartY());
     }
 
     @Override
-    public void directionBas(double hauteurJeu) {
+    public void deplacerEnBas(double hauteurJeu) {
         // à compléter
     }
 
     @Override
-    public void directionHaut() {
+    public void deplacerEnHaut() {
         // à compléter
     }
 

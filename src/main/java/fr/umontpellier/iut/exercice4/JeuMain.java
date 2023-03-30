@@ -32,7 +32,7 @@ public class JeuMain extends Application {
         scene = new Scene(root);
 
         //Gestion du déplacement du personnage
-        move(pacman, fantome);
+        deplacer(pacman, fantome);
 
         primaryStage.setTitle("... Pac Man ...");
 
@@ -41,27 +41,27 @@ public class JeuMain extends Application {
     }
 
     /**
-     * move permet de gérer les événements de type clavier, pression des touches
+     * Permet de gérer les événements de type clavier, pression des touches
      * pour le j1(up,down, right, left), pour le j2( z,q,s,d)
      *
      * @param j1
      * @param j2
      */
-    private void move(Personnage j1, Personnage j2) {
+    private void deplacer(Personnage j1, Personnage j2) {
         scene.setOnKeyPressed((KeyEvent event) -> {
             switch (event.getCode()) {
                 case LEFT:
-                    j1.directionGauche();
+                    j1.deplacerAGauche();
                     break;
                 case RIGHT:
-                    j1.directionDroite(scene.getWidth());
+                    j1.deplacerADroite(scene.getWidth());
                     break;
                 case Z:
                     //j2...... vers le haut;
                     break;
 
             }
-            if (j1.collision(j2)) System.out.println("Collision....");
+            if (j1.estEnCollision(j2)) System.out.println("Collision....");
         });
     }
 
