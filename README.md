@@ -152,7 +152,7 @@ int nombre = random.nextInt(3);
 
 **Diagramme de classes :**
 
-![](images/exo4/pacmandiagclasses.jpg)
+![](images/exo4/pacmandiagclasses.png)
 
 - Un objet de type `Pacman` sera un `Personnage` qui comporte _un corps et une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
 

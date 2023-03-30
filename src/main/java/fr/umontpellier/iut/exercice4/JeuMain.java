@@ -61,7 +61,8 @@ public class JeuMain extends Application {
                     break;
 
             }
-            if (j1.estEnCollision(j2)) System.out.println("Collision....");
+            if (j1.estEnCollision(j2))
+                System.out.println("Collision....");
         });
     }
 
