@@ -164,7 +164,7 @@ Dans un jeu PacMan les personnages (classe `Personnage`) ont tous un corps sous 
 
 **Diagramme de classes :**
 
-![](images/exo4/pacmandiagclasses.png)
+<img src="images/exo4/pacmandiagclasses.png" width="700"/>
 
 
 Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
