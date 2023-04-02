@@ -146,7 +146,7 @@ int nombre = random.nextInt(3);
 ```
 
 
-### Exercice 4 - Jeu de type PacMan.
+### Exercice 4 - Jeu de type PacMan
 
 **Objectif :** afficher un pacman, un fantôme, les faire se déplacer au clavier, détecter les éventuelles collisions.
 
@@ -203,6 +203,36 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 5 - **Imaginez** une suite, un mode de jeu rapide par exemple le jeu se lance, le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes, soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
 
+
+### Exercice 5 - Jeu du pendu
+
+Dans cet exercice, vous allez réaliser une interface graphique du jeu du pendu, jeu qui consiste à découvrir un mot caché en proposant des lettres successivement, jusqu'à l'avoir trouvé, mais dans la limite d'un certain nombre de vies (le joueur est alors "pendu"...).
+<br/>Pour mettre en place le jeu, on vous fournit une classe Dico, qui correspond à un petit dictionnaire contenant donc une liste de mots. On peut l'utiliser grâce aux deux méthodes publiques suivantes :
+- `String getMot()` qui retourne un mot, extrait de la liste de mots de façon aléatoire à chaque appel,
+- `ArrayList<Integer> getPositions(char lettre, String mot)` qui retourne la liste des positions d'un caractère dans une chaîne de caractères. Si ce caractère ne se trouve pas dans la chaîne de caractères, le résultat est `null`.
+
+Vous allez construire cette interface de façon incrémentale, en suivant par exemple la démarche proposée un peu plus bas.
+Vous pouvez vous inspirer d'une IHM qui ressemblerait à cela :
+
+![](images/Exo5Debut.jpg)
+
+Lorsque l'utilisateur a commencé à proposer des lettres, l'interface deviendra :
+
+![](images/Exo5EnCours.jpg)
+
+Remarquez que les caractères proposés par le joueur qui ne se trouvent pas dans le mot à découvrir ne sont plus actifs. Par contre, ceux en faisant partie peuvent rester actifs.
+
+#### Démarche :
+Commencez par afficher : 
+- un `TextField` permettant à l'utilisateur de proposer une lettre,
+- un `Label` qui rappelle le nombre de vies,
+- et une représentation cachée du mot à découvrir.
+<br/>A ce niveau, le jeu devrait être effectif.
+
+Remplacez maintenant le `TextField` par un ensemble de touches correspondant à des lettres. Lorsque le nombre de vies est 0 ou que le joueur a trouvé le mot, les touches ne devraient plus avoir d'effet (sans pour autant être devenues inactives).
+<br/>Affichez ensuite les images qui correspondent au nombre de vies, en utilisant les fichiers dans le répertoire *"resources/exercice5"*.
+<br/>Enfin, ajoutez le bouton qui permet de recommencer une partie.
+
 ## Partie 2 - FXML
 
 Comme vous l'avez pu constater dans les exercices précédents, l'intégralité du code d'organisation des composants graphiques et les traitements correspondants étaient définis dans le même bloc de code Java. Par exemple, pour le jeu Pacman de l'exercice 4, la classe `JeuMain` gérait à la fois les composants principaux du graphe de scène du jeu, mais aussi la gestion des mouvements des personnages. Cette approche (dite _procédurale_) marche tant que le code de l'IHM n'est pas trop complexe. Mais le code deviendra ingérable dès que votre IHM contiendra des nombreux composants graphiques (potentiellement imbriqués), avec beaucoup de code de traitement associé.
@@ -213,9 +243,9 @@ Ainsi, utiliser le FXML permet de séparer la logique de construction de l'inter
 
 Dans cette partie, nous allons voir comment construire des interfaces graphiques en utilisant le FXML.
 
-### Exercice 5 - Utilisation de FXML
+### Exercice 6 - Utilisation de FXML
 
-Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice4"*.<br/>
+Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice6"*.<br/>
 Le contenu de `CounterView.fxml` définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre est un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant deux boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
 
 Complétez la classe `CounterController` en déclarant les attributs correspondant aux éléments du fichier *fxml* et annotez-les avec `@FXML`. Initialisez le texte du `Label` avec la chaîne *"0"*.
@@ -224,13 +254,13 @@ Complétez la classe `CounterController` en déclarant les attributs corresponda
 
 Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en ajoutant dans la balise racine un attribut `fx:controller` de valeur égale au nom complet de la classe (c'est-à-dire en précisant aussi le package dans lequel elle est définie).
 
-### Exercice 6 - Création de l'IHM en FXML et SceneBuilder
+### Exercice 7 - Création de l'IHM en FXML et SceneBuilder
 
 Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
 
 Vous allez utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
 
-![](images/Exo6.png)
+![](images/Exo7.png)
 
 Pour ouvrir le fichier *fxml* avec [SceneBuilder](https://gluonhq.com/products/scene-builder/) dans IntelliJ IDEA : clic droit sur le fichier *fxml* &rightarrow; *Open in SceneBuilder*. Si vous utilisez le SceneBuilder pour la première fois, il faut indiquer à l'IDE le chemin d'accès à l'exécutable de ce logiciel. À l'IUT, sur les postes Linux, il réside dans `/opt/scenebuilder/bin/`. Si vous êtes sur votre machine personnelle, il faudrait que vous installiez d'abord [SceneBuilder](https://gluonhq.com/products/scene-builder/) et ensuite indiquiez à l'IDE le chemin d'accès.
 
@@ -239,6 +269,6 @@ Le fichier *CSS* vous est fourni, il n'est pas nécessaire de le modifier. Vous 
 La totalité de la classe `LoginMain` vous est fournie, et vous devez compléter la classe `LoginControl` en déclarant les attributs manquants (qui correspondent aux éléments du fichier *fxml*) et en implémentant les actions des deux boutons.<br/>
 Un clic sur le bouton _OK_ affiche sur la console le nom de l'utilisateur et une suite d'étoiles dont la longueur correspond au nombre de caractères du mot de passe, et un clic sur _Cancel_ vide les deux champs.
 
-### Exercice 7 - Animations
+### Exercice 8 - Animations
 
 Regardez (et exécutez) le code fourni dans la classe `Animation`, et transformez-le pour que l'image fasse le tour de la fenêtre, puis revienne automatiquement en sens inverse.

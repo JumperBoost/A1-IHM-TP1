@@ -1,10 +1,8 @@
-package fr.umontpellier.iut.exercice7;
+package fr.umontpellier.iut.exercice8;
 
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;

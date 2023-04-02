@@ -1,4 +1,4 @@
-package fr.umontpellier.iut.exercice7;
+package fr.umontpellier.iut.exercice8;
 
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
@@ -17,7 +17,7 @@ public class CustomButton extends Parent {
 
     public CustomButton() {
         StackPane st = new StackPane();
-        image = new ImageView(new Image("exercice7/Rond.png"));
+        image = new ImageView(new Image("exercice8/Rond.png"));
         Label label = new Label("Clic");
         label.setFont(Font.font("Tahoma", FontWeight.BOLD, 15));
         label.setTextFill(Color.ORANGERED);
