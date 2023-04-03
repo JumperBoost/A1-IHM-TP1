@@ -23,7 +23,7 @@ Nous vous conseillons fortement de travailler avec IntelliJ IDEA. Vous pouvez au
 ![](images/Organisation-Maven-projet-JavaFX.png)
 
 Ainsi le répertoire **src/main/java** contiendra :
-* L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
+* L'ensemble des paquetages de votre application ; dans l'exemple de l'image ci-dessus, il n'y en a qu'un -- `fr.exemple.AppliJavaFX`.
 * Un fichier spécial `module-info.java` qui décrit l'ensemble des paquetages externes utilisés dans votre application. En l'occurrence, les paquetages de la librairie JavaFX (on vous rappelle que JavaFX ne fait partie de l'API native Java). Les modules constituent une fonctionnalité importante de Java depuis la version 9 de la plateforme. Ils permettent de construire des exécutables légers (_.jar_) en y encapsulant l'ensemble de dépendances nécessaires au bon fonctionnement. En quelque sorte, on peut les voir comme une généralisation de la notion de paquetage. Pour plus de détails :
     * https://en.wikipedia.org/wiki/Java_Platform_Module_System
     * https://en.wikipedia.org/wiki/Modular_programming
@@ -32,7 +32,7 @@ Ainsi le répertoire **src/main/java** contiendra :
 
 Le répertoire **src/main/resources** contiendra l'ensemble de ressources du projet : images, feuilles de styles CSS, les fichiers `.fxml` contenant la description déclarative de vos interfaces graphiques, etc.
 
-Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application. Notez que pour le moment vous n'allez pas écrire des tests unitaires pour tester vos IHM, donc le répertoire **src/main/test** n'apparaîtra pas pour le moment dans vos projets. Au moment où voudrez ajouter des tests unitaires, vous aurez éventuellement à créer ce répertoire.
+Le répertoire **src/main/test** contiendra l'intégralité des tests de votre application. Notez que pour le moment, vous n'allez pas écrire des tests unitaires pour tester vos IHM, donc le répertoire **src/main/test** n'apparaîtra pas pour le moment dans vos projets. Au moment où voudrez ajouter des tests unitaires, vous aurez éventuellement à créer ce répertoire.
 
 
 Tout au long du TP, vous aurez besoin de **consulter [les pages de documentation de JavaFX](https://openjfx.io/javadoc/18/)**. Dans ce cours, nous allons travailler sur la **version 17 de Java et version 18 de JavaFX**. Sur les machines du département tout est déjà installé et configuré. Si vous travaillez sur votre machine personnelle, pensez à installer les bonnes versions.
@@ -95,7 +95,7 @@ Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le de
 
 Dans les exercices de cette partie, vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène. Pensez à consulter le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) pour vous aider dans chaque question.
 
-### Exercice 0 - Conteneurs de base
+### Exercice 1 - Conteneurs de base
 Dans cet exercice, vous allez manipuler les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci :
 
 ![](images/exo0/FenetrePrincipale.png)
@@ -106,11 +106,11 @@ Quelques indications :
   * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
   
   Le menu _Help_ ne contient aucun autre sous-item.
-* Pour obtenir des barres séparant les différentes parties de la fenêtre, vous pouvez utiliser des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/Separator.html) ou des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/SeparatorMenuItem.html).
+* Pour obtenir des barres séparant les différentes parties de la fenêtre, vous pouvez utiliser des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/Separator.html) ou des [`SeparatorMenuItem`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/SeparatorMenuItem.html).
 * Le formulaire du milieu est un [`GridPane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/GridPane.html) composé de 3 lignes et 2 colonnes.
 * Aucune réaction aux événements n'est attendue pour cet exercice.
 
-### Exercice 1 - Contrôles de base
+### Exercice 2 - Contrôles de base
 
 Pour commencer simplement, nous allons construire une petite application graphique qui correspond au *"Bonjour à tous"* traditionnel... <br/>
 A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement sur votre dépôt GitLab.
@@ -135,7 +135,7 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
    Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice1/_.<br/>
    Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
 
-### Exercice 2 - Conteneurs BorderPane et HBox
+### Exercice 3 - Conteneurs BorderPane et HBox
 
 Vous devez écrire une application dont la fenêtre initiale est la suivante :
 
@@ -147,7 +147,7 @@ Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivan
 
 Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
 
-### Exercice 3 - Conteneur GridPane
+### Exercice 4 - Conteneur GridPane
 
 Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
 
@@ -161,7 +161,7 @@ int nombre = random.nextInt(3);
 ```
 
 
-### Exercice 4 - Jeu de type PacMan
+### Exercice 5 - Jeu de type PacMan
 
 **Objectif :** afficher un pacman, un fantôme, les faire se déplacer au clavier, détecter les éventuelles collisions.
 
@@ -179,7 +179,7 @@ Dans un jeu PacMan les personnages (classe `Personnage`) ont tous un corps sous 
 
 **Diagramme de classes :**
 
-<img src="images/exo4/pacmandiagclasses.png" width="700"/>
+<img src="images/exo5/pacmandiagclasses.png" width="700"/>
 
 
 Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
@@ -187,23 +187,23 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 
 **État initial :**
 
-![](images/exo4/jeuinitial.jpg)
+![](images/exo5/jeuinitial.jpg)
 
 **Le pacman s’est déplacé à droite**
 
-![](images/exo4/pacman2.jpg)
+![](images/exo5/pacman2.jpg)
 
 **Puis repart vers la gauche**
 
-![](images/exo4/pacman3.jpg)
+![](images/exo5/pacman3.jpg)
 
 1 - **Complétez** la classe `Pacman` afin que soient pris en compte les déplacements bas et haut. Les touches de déplacement seront les touches du clavier UP, DOWN, LEFT et RIGHT
 
-![](images/exo4/pacmanbas.jpg) ![](images/exo4/pacmanhaut.jpg)
+![](images/exo5/pacmanbas.jpg) ![](images/exo5/pacmanhaut.jpg)
 
 2 - **Complétez** la classe `Fantome` afin que soient pris en compte les déplacements haut, bas, gauche et droite. Les touches de déplacement seront Z, S, Q et D. Les yeux du fantôme suivront la direction comme cela :
 
-![](images/exo4/fantomes.jpg)
+![](images/exo5/fantomes.jpg)
 
 3 - Pour l’instant la collision affiche un message dans la console. Trouvez un moyen de **stopper le jeu** lorsqu'une collision se produit.
 
@@ -214,12 +214,12 @@ Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige ver
 - Lors du déplacement d'un `Personnage` (haut, bas, droite ou gauche), _sauvegardez_ sa position (`x` et `y`), faites le _déplacement voulu_, _détectez_ une collision avec un obstacle (détection de collision avec un des obstacles), si collision _détectée_ **repositionnez** le personnage avec les coordonnées sauvegardées.
 
 
-![](images/exo4/pacmanObstacle.jpg)
+![](images/exo5/pacmanObstacle.jpg)
 
 5 - **Imaginez** une suite, un mode de jeu rapide par exemple le jeu se lance, le gagnant sera soit le pacman s’il atteint le fantôme en moins de 10 secondes, soit le fantôme s’il réussit à échapper au pacman au bout des 10 secondes…
 
 
-### Exercice 5 - Jeu du pendu
+### Exercice 6 - Jeu du pendu
 
 Dans cet exercice, vous allez réaliser une interface graphique du jeu du pendu, jeu qui consiste à découvrir un mot caché en proposant des lettres successivement, jusqu'à l'avoir trouvé, mais dans la limite d'un certain nombre de vies (le joueur est alors "pendu"...).
 <br/>Pour mettre en place le jeu, on vous fournit une classe Dico, qui correspond à un petit dictionnaire contenant donc une liste de mots. On peut l'utiliser grâce aux deux méthodes publiques suivantes :
@@ -258,7 +258,7 @@ Ainsi, utiliser le FXML permet de séparer la logique de construction de l'inter
 
 Dans cette partie, nous allons voir comment construire des interfaces graphiques en utilisant le FXML.
 
-### Exercice 6 - Utilisation de FXML
+### Exercice 7 - Utilisation de FXML
 
 Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice6"*.<br/>
 Le contenu de `CounterView.fxml` définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre est un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant deux boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
@@ -269,7 +269,7 @@ Complétez la classe `CounterController` en déclarant les attributs corresponda
 
 Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en ajoutant dans la balise racine un attribut `fx:controller` de valeur égale au nom complet de la classe (c'est-à-dire en précisant aussi le package dans lequel elle est définie).
 
-### Exercice 7 - Création de l'IHM en FXML et SceneBuilder
+### Exercice 8 - Création de l'IHM en FXML et SceneBuilder
 
 Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
 
@@ -284,6 +284,6 @@ Le fichier *CSS* vous est fourni, il n'est pas nécessaire de le modifier. Vous 
 La totalité de la classe `LoginMain` vous est fournie, et vous devez compléter la classe `LoginControl` en déclarant les attributs manquants (qui correspondent aux éléments du fichier *fxml*) et en implémentant les actions des deux boutons.<br/>
 Un clic sur le bouton _OK_ affiche sur la console le nom de l'utilisateur et une suite d'étoiles dont la longueur correspond au nombre de caractères du mot de passe, et un clic sur _Cancel_ vide les deux champs.
 
-### Exercice 8 - Animations
+### Exercice 9 - Animations
 
 Regardez (et exécutez) le code fourni dans la classe `Animation`, et transformez-le pour que l'image fasse le tour de la fenêtre, puis revienne automatiquement en sens inverse.

@@ -1,4 +1,4 @@
-package fr.umontpellier.iut.exercice8;
+package fr.umontpellier.iut.exercice9;
 
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
