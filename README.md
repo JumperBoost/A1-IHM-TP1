@@ -70,17 +70,17 @@ import javafx.stage.Stage;
 
 public class MaPremiereClasseJavaFX extends Application {
 
-  public static void main(String[] args) {
-    // ici, on peut passer des arguments à l'application JavaFX
-    Application.launch(args);
-  }
-  
-  @Override
-  public void start(Stage primaryStage) {
-    // le code pour enrichir votre fenêtre
-    primaryStage.setTitle("La page d'un Pro de JavaFX !"); // titre de la fenêtre
-    primaryStage.show(); // rendre la fenêtre visible
-  }
+    public static void main(String[] args) {
+        // ici, on peut passer des arguments à l'application JavaFX
+        Application.launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        // le code pour enrichir votre fenêtre
+        primaryStage.setTitle("La page d'un Pro de JavaFX !"); // titre de la fenêtre
+        primaryStage.show(); // rendre la fenêtre visible
+    }
 }
 ```
 Dans le code ci-dessus la méthode statique `launch(String[] args)` de la classe `javafx.application.Application` va déclencher la méthode dynamique `start(Stage primaryStage)`. Notez que JavaFX est conçu de façon à ce que la méthode `launch(String[] args)` détecte correctement la méthode `start(Stage primaryStage)` à exécuter en fonction de la classe héritant de `Application` où `launch(String[] args)` a été lancée. Dans l'exemple ci-dessus cette classe est `MaPremiereClasseJavaFX`.
@@ -102,20 +102,33 @@ Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. 
 
 **Quelques indications :**
 * Le menu est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus File et Edit contiennent chacun les sous-items suivants :
-  * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
-  * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
-  
+    * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
+    * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
+
   Le menu _Help_ ne contient aucun autre sous-item.
 * Pour obtenir des barres séparant les différentes parties de la fenêtre, vous pouvez utiliser des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/Separator.html) ou des [`SeparatorMenuItem`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/SeparatorMenuItem.html).
 * Le formulaire du milieu est un [`GridPane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/GridPane.html) composé de 3 lignes et 2 colonnes.
 * Aucune réaction aux événements n'est attendue pour cet exercice.
 
-### Exercice 2 - Contrôles de base
+### Exercice 2 - Conteneur GridPane
+
+Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
+
+![](images/Exo2.png)
+
+Cette fenêtre est déplaçable, mais pas redimensionnable (`initStyle(StageStyle.UTILITY)`)
+Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice3_. L'image à afficher sera choisie aléatoirement : pour cela, vous pouvez faire générer un nombre entre 0 et 2, à partir d'un objet `Random`:
+```java
+Random random = new Random();
+int nombre = random.nextInt(3);
+```
+
+### Exercice 3 - Contrôles de base
 
 Pour commencer simplement, nous allons construire une petite application graphique qui correspond au *"Bonjour à tous"* traditionnel... <br/>
 A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement sur votre dépôt GitLab.
 
-1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice2` et faites exécuter la méthode `main(String args[])`. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez la largeur et la hauteur à 400 (`setWidth` et `setHeight`).
+1. Lisez le contenu de la classe `MaPremierFenetreJavaFX` du paquetage `fr.umontpellier.iut.exercice3` et faites exécuter la méthode `main(String args[])`. Modifiez le titre de la fenêtre en *"Hello Application"* et fixez la largeur et la hauteur à 400 (`setWidth` et `setHeight`).
 
 2. Dans la méthode `start(Stage primaryStage)`, instanciez un conteneur [`VBox`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/VBox.html), et précisez que les éléments qu'il contiendra seront centrés (en utilisant sa méthode `setAlignment(Pos p)`). Vous y ajouterez un [`Label`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/Label.html) dont le texte actuel est *"Bonjour à tous !"*.
    Déclarez ensuite une [scène](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/Scene.html) dans laquelle vous placerez votre conteneur et ajoutez cette scène à votre fenêtre principale (objet de la classe `Stage`).
@@ -123,15 +136,15 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
 3. Ajoutez maintenant un [`TextField`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/TextField.htmlcontrol/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
 
 4. Vous allez maintenant ajouter un [gestionnaire d'événement](https://openjfx.io/javadoc/18/javafx.base/javafx/event/EventHandler.html) sur ce bouton afin d'intercepter l'action de clic sur ce bouton et lui associer une action de réponse spécifique.
-   * Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda :
-     ```
-     bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, actionEvent -> { ... });
-     ```
-    Une action de clic sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
+    * Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda :
+      ```
+      bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, actionEvent -> { ... });
+      ```
+      Une action de clic sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
 
-   * Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici, vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
+    * Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici, vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
 
-   * Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche. Ici, vous utiliserez une méthode de convenance ```setOnAction(...)```.
+    * Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche. Ici, vous utiliserez une méthode de convenance ```setOnAction(...)```.
 
 5. Vous allez maintenant faire un peu de mise en forme... <br/>
    Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
@@ -140,30 +153,17 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
    Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice1/_.<br/>
    Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
 
-### Exercice 3 - Conteneurs BorderPane et HBox
+### Exercice 4 - Conteneurs BorderPane et HBox
 
 Vous devez écrire une application dont la fenêtre initiale est la suivante :
 
-![](images/Exo3First.png)
+![](images/Exo4First.png)
 
 Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :
 
-![](images/Exo3Second.png)
+![](images/Exo4Second.png)
 
 Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
-
-### Exercice 4 - Conteneur GridPane
-
-Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
-
-![](images/Exo4.png)
-
-Cette fenêtre est déplaçable, mais pas redimensionnable (`initStyle(StageStyle.UTILITY)`)
-Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice3_. L'image à afficher sera choisie aléatoirement : pour cela, vous pouvez faire générer un nombre entre 0 et 2, à partir d'un objet `Random`:
-```java
-Random random = new Random();
-int nombre = random.nextInt(3);
-```
 
 
 ### Exercice 5 - Jeu de type PacMan
@@ -243,11 +243,11 @@ Lorsque l'utilisateur a commencé à proposer des lettres, l'interface deviendra
 Remarquez que les caractères proposés par le joueur qui ne se trouvent pas dans le mot à découvrir ne sont plus actifs. Par contre, ceux en faisant partie peuvent rester actifs.
 
 #### Démarche :
-Commencez par afficher : 
+Commencez par afficher :
 - un `TextField` permettant à l'utilisateur de proposer une lettre,
 - un `Label` qui rappelle le nombre de vies,
 - et une représentation cachée du mot à découvrir.
-<br/>A ce niveau, le jeu devrait être effectif.
+  <br/>A ce niveau, le jeu devrait être effectif.
 
 Remplacez maintenant le `TextField` par un ensemble de touches correspondant à des lettres. Lorsque le nombre de vies est 0 ou que le joueur a trouvé le mot, les touches ne devraient plus avoir d'effet (sans pour autant être devenues inactives).
 <br/>Affichez ensuite les images qui correspondent au nombre de vies, en utilisant les fichiers dans le répertoire *"resources/exercice5"*.

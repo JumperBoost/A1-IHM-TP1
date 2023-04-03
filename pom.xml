@@ -87,7 +87,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>fr.umontpellier.iut.exercice2.MaPremiereFenetreJavaFX</mainClass>
+                    <mainClass>fr.umontpellier.iut.exercice3.MaPremiereFenetreJavaFX</mainClass>
                 </configuration>
             </plugin>
 
