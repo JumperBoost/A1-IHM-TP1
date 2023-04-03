@@ -10,7 +10,7 @@ public class Pacman extends Personnage {
 
     public Pacman() {
         super("droite", Color.BLACK, Color.YELLOW);
-        bouche = new Line(LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE * 2, LARGEUR_MOITIE_PERSONNAGE);
+        bouche = new Line(LARGEUR_MOITIE_PERSONNAGE, LARGEUR_MOITIE_PERSONNAGE, (LARGEUR_MOITIE_PERSONNAGE * 2) - .5, LARGEUR_MOITIE_PERSONNAGE);
         bouche.setFill(Color.BLACK);
 
         super.getChildren().add(bouche);
@@ -20,7 +20,7 @@ public class Pacman extends Personnage {
     public void deplacerAGauche() {
         super.deplacerAGauche();
         //sens de la bouche
-        bouche.setEndX(bouche.getStartX() - LARGEUR_MOITIE_PERSONNAGE);
+        bouche.setEndX(bouche.getStartX() - LARGEUR_MOITIE_PERSONNAGE + .5);
         bouche.setEndY(bouche.getStartY());
     }
 
@@ -28,7 +28,7 @@ public class Pacman extends Personnage {
     public void deplacerADroite(double largeurJeu) {
         super.deplacerADroite(largeurJeu);
         //sens de la bouche
-        bouche.setEndX(bouche.getStartX() + LARGEUR_MOITIE_PERSONNAGE);
+        bouche.setEndX(bouche.getStartX() + LARGEUR_MOITIE_PERSONNAGE - .5);
         bouche.setEndY(bouche.getStartY());
     }
 
