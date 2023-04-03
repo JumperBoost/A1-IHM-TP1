@@ -96,11 +96,11 @@ Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le de
 Dans les exercices de cette partie, vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène. Pensez à consulter le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) pour vous aider dans chaque question.
 
 ### Exercice 1 - Conteneurs de base
-Dans cet exercice, vous allez manipuler les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci :
+Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci :
 
 ![](images/exo1/FenetrePrincipale.png)
 
-Quelques indications :
+**Quelques indications :**
 * Le menu est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus File et Edit contiennent chacun les sous-items suivants :
   * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
   * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
@@ -122,13 +122,18 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
 
 3. Ajoutez maintenant un [`TextField`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/TextField.htmlcontrol/TextField.html) qui permettra de saisir un nom et fixez-en la largeur maximale (`setMaxWidth`) à 150. Puis ajoutez un [`Button`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/Button.html) construit avec le texte *"Dire bonjour"*.
 
-    1. Vous allez maintenant ajouter un [gestionnaire d'événement](https://openjfx.io/javadoc/18/javafx.base/javafx/event/EventHandler.html) sur ce bouton afin d'intercepter l'action de clic sur ce bouton et lui associer une action de réponse spécifique. Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda (```actionEvent -> { ... }```). Une action sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
+4. Vous allez maintenant ajouter un [gestionnaire d'événement](https://openjfx.io/javadoc/18/javafx.base/javafx/event/EventHandler.html) sur ce bouton afin d'intercepter l'action de clic sur ce bouton et lui associer une action de réponse spécifique.
+   * Dans un premier temps, vous l'ajouterez sous la forme d'une expression lambda :
+     ```
+     bouton.addEventHandler(MouseEvent.MOUSE_CLICKED, actionEvent -> { ... });
+     ```
+    Une action de clic sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
 
-    2. Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici, vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
+   * Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici, vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
 
-    3. Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche.
+   * Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche. Ici, vous utiliserez une méthode de convenance ```setOnAction(...)```.
 
-4. Vous allez maintenant faire un peu de mise en forme... <br/>
+5. Vous allez maintenant faire un peu de mise en forme... <br/>
    Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
    [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/blob/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
    Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
