@@ -101,12 +101,13 @@ Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. 
 ![](images/exo1/FenetrePrincipale.png)
 
 **Quelques indications :**
-* Le menu est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus File et Edit contiennent chacun les sous-items suivants :
+* Réfléchissez au type du conteneur que vous allez utiliser pour la racine de votre graphe de scène. Pensez à consulter les sous-classes de la classe [`Pane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/Pane.html).
+* La barre de menus ([`MenuBar`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/MenuBar.html)) est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus _File_ et _Edit_ contiennent chacun les sous-items suivants :
     * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
     * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
 
   Le menu _Help_ ne contient aucun autre sous-item.
-* Pour obtenir des barres séparant les différentes parties de la fenêtre, vous pouvez utiliser des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/Separator.html) ou des [`SeparatorMenuItem`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/SeparatorMenuItem.html).
+* Pour obtenir des barres séparant les différentes parties de la scène, vous pouvez utiliser des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/Separator.html) ou des [`SeparatorMenuItem`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/SeparatorMenuItem.html).
 * Le formulaire du milieu est un [`GridPane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/GridPane.html) composé de 3 lignes et 2 colonnes.
 * Aucune réaction aux événements n'est attendue pour cet exercice.
 
