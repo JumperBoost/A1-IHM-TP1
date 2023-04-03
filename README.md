@@ -93,7 +93,22 @@ Si vous êtes sur un autre système d'exploitation (Windows, Mac OS, etc.) le de
 
 ## Partie 1 - Le graphe de scène et quelques événements
 
-Dans les exercices de cette partie vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène. Pensez à consulter le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) pour vous aider dans chaque question.
+Dans les exercices de cette partie, vous allez personnaliser votre fenêtre JavaFX avec différents éléments graphiques en construisant le graphe de scène. Pensez à consulter le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) pour vous aider dans chaque question.
+
+### Exercice 0 - Conteneurs de base
+Dans cet exercice, vous allez manipuler les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci :
+
+![](images/exo0/FenetrePrincipale.png)
+
+Quelques indications :
+* Le menu est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus File et Edit contiennent chacun les sous-items suivants :
+  * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
+  * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
+  
+  Le menu _Help_ ne contient aucun autre sous-item.
+* Pour obtenir des barres séparant les différentes parties de la fenêtre, vous pouvez utiliser des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/Separator.html) ou des [`Separator`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/control/SeparatorMenuItem.html).
+* Le formulaire du milieu est un [`GridPane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/GridPane.html) composé de 3 lignes et 2 colonnes.
+* Aucune réaction aux événements n'est attendue pour cet exercice.
 
 ### Exercice 1 - Contrôles de base
 
