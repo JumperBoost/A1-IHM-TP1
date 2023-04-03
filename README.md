@@ -98,7 +98,7 @@ Dans les exercices de cette partie, vous allez personnaliser votre fenêtre Java
 ### Exercice 1 - Conteneurs de base
 Dans cet exercice, vous allez manipuler les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci :
 
-![](images/exo0/FenetrePrincipale.png)
+![](images/exo1/FenetrePrincipale.png)
 
 Quelques indications :
 * Le menu est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus File et Edit contiennent chacun les sous-items suivants :
@@ -139,11 +139,11 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
 
 Vous devez écrire une application dont la fenêtre initiale est la suivante :
 
-![](images/Exo2First.png)
+![](images/Exo3First.png)
 
 Un clic sur un des boutons (ici 3 clics sur le vert) donnera le résultat suivant :
 
-![](images/Exo2Second.png)
+![](images/Exo3Second.png)
 
 Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l'élément du haut est un `Label` centré, celui du milieu un `Pane` et celui du bas une `HBox` de `Button`. Le changement de couleur d'un panneau se fait en utilisant la méthode `setStyle(String s)`.
 
@@ -151,7 +151,7 @@ Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l
 
 Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
 
-![](images/Exo3.png)
+![](images/Exo4.png)
 
 Cette fenêtre est déplaçable, mais pas redimensionnable (`initStyle(StageStyle.UTILITY)`)
 Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice3_. L'image à afficher sera choisie aléatoirement : pour cela, vous pouvez faire générer un nombre entre 0 et 2, à partir d'un objet `Random`:
@@ -229,11 +229,11 @@ Dans cet exercice, vous allez réaliser une interface graphique du jeu du pendu,
 Vous allez construire cette interface de façon incrémentale, en suivant par exemple la démarche proposée un peu plus bas.
 Vous pouvez vous inspirer d'une IHM qui ressemblerait à cela :
 
-![](images/Exo5Debut.jpg)
+![](images/Exo6Debut.jpg)
 
 Lorsque l'utilisateur a commencé à proposer des lettres, l'interface deviendra :
 
-![](images/Exo5EnCours.jpg)
+![](images/Exo6EnCours.jpg)
 
 Remarquez que les caractères proposés par le joueur qui ne se trouvent pas dans le mot à découvrir ne sont plus actifs. Par contre, ceux en faisant partie peuvent rester actifs.
 
@@ -275,7 +275,7 @@ Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau c
 
 Vous allez utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
 
-![](images/Exo7.png)
+![](images/Exo8.png)
 
 Pour ouvrir le fichier *fxml* avec [SceneBuilder](https://gluonhq.com/products/scene-builder/) dans IntelliJ IDEA : clic droit sur le fichier *fxml* &rightarrow; *Open in SceneBuilder*. Si vous utilisez le SceneBuilder pour la première fois, il faut indiquer à l'IDE le chemin d'accès à l'exécutable de ce logiciel. À l'IUT, sur les postes Linux, il réside dans `/opt/scenebuilder/bin/`. Si vous êtes sur votre machine personnelle, il faudrait que vous installiez d'abord [SceneBuilder](https://gluonhq.com/products/scene-builder/) et ensuite indiquiez à l'IDE le chemin d'accès.
 
