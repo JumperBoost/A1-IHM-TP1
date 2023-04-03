@@ -1,4 +1,4 @@
-package fr.umontpellier.iut.exercice2;
+package fr.umontpellier.iut.exercice3;
 
 import javafx.application.Application;
 import javafx.scene.control.Button;
