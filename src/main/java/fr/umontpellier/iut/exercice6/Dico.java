@@ -10,7 +10,7 @@ public class Dico {
 
     public Dico() {
         listeMots = new ArrayList<>();
-        InputStream streamDico = getClass().getResourceAsStream("/exercice5/dico");
+        InputStream streamDico = getClass().getResourceAsStream("/exercice6/dico");
         String mot;
         try {
             assert streamDico != null;
