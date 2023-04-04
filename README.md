@@ -103,7 +103,7 @@ Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. 
 **Quelques indications :**
 * Réfléchissez au type du conteneur que vous allez utiliser pour la racine de votre graphe de scène. Pensez à consulter les sous-classes de la classe [`Pane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/Pane.html).
 * La barre de menus ([`MenuBar`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/MenuBar.html)) est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus _File_ et _Edit_ contiennent chacun les sous-items suivants :
-    * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
+    * _File_ &longrightarrow; _New_, _Open_, _Save_ et _Close_
     * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
 
   Le menu _Help_ ne contient aucun autre sous-item.
