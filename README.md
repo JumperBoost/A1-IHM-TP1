@@ -117,8 +117,16 @@ Reproduisez la fenêtre suivante en utilisant un conteneur `GridPane`:
 
 ![](images/Exo2.png)
 
-Cette fenêtre est déplaçable, mais pas redimensionnable (`initStyle(StageStyle.UTILITY)`)
-Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice3_. L'image à afficher sera choisie aléatoirement : pour cela, vous pouvez faire générer un nombre entre 0 et 2, à partir d'un objet `Random`:
+Cette fenêtre est déplaçable, mais pas redimensionnable. Pour cela, vous pouvez exécuter `initStyle(StageStyle.UTILITY)` sur l'objet `Stage`. Sur certains systèmes d'exploitation ce style n'est pas supporté et la fenêtre peut ne pas s'afficher... Dans ce cas, vous pouvez exécuter `setResizable(false)` sur l'objet `Stage`.
+
+Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice2_. Pour cela, déclarez un objet de la classe [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) et utilisez la méthode `setGraphic(Node n)` sur le label. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes. Pour créer un objet `ImageView`, il faut lui passer en paramètre du constructeur la chaîne de caractères correspondante au chemin relatif vers la ressource :
+
+```java
+ImageView image = new ImageView("resources/exercice2/Croix.png");
+label.setGraphic(image);
+```
+
+L'image à afficher sera choisie aléatoirement : pour cela, vous pouvez faire générer un nombre entre 0 et 2, à partir d'un objet `Random`:
 ```java
 Random random = new Random();
 int nombre = random.nextInt(3);
@@ -149,9 +157,9 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
 
 5. Vous allez maintenant faire un peu de mise en forme... <br/>
    Remplacez le texte du bouton par une image : pour cela, déclarez un objet de la classe [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) construit avec cette
-   [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/blob/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes.<br/>
+   [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/blob/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton.<br/>
    Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
-   Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice1/_.<br/>
+   Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice3/_.<br/>
    Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
 
 ### Exercice 4 - Conteneurs BorderPane et HBox
@@ -251,7 +259,7 @@ Commencez par afficher :
   <br/>A ce niveau, le jeu devrait être effectif.
 
 Remplacez maintenant le `TextField` par un ensemble de touches correspondant à des lettres. Lorsque le nombre de vies est 0 ou que le joueur a trouvé le mot, les touches ne devraient plus avoir d'effet (sans pour autant être devenues inactives).
-<br/>Affichez ensuite les images qui correspondent au nombre de vies, en utilisant les fichiers dans le répertoire *"resources/exercice5"*.
+<br/>Affichez ensuite les images qui correspondent au nombre de vies, en utilisant les fichiers dans le répertoire *"resources/exercice6"*.
 <br/>Enfin, ajoutez le bouton qui permet de recommencer une partie.
 
 ## Partie 2 - FXML
@@ -266,7 +274,7 @@ Dans cette partie, nous allons voir comment construire des interfaces graphiques
 
 ### Exercice 7 - Utilisation de FXML
 
-Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice6"*.<br/>
+Consultez les classes du paquetage `exercice4` : vous reconnaissez en partie le code de `CounterMain`, qui définit la fenêtre principale, et dont la structure est chargée à partir du fichier ressource *"CounterView.fxml"* du répertoire *"resources/exercice7"*.<br/>
 Le contenu de `CounterView.fxml` définit la racine de la scène comme un conteneur `BorderPane`, dont l'élément au centre est un `VBox`. Ce dernier contient un `Label`et un conteneur `HBox`, lui-même contenant deux boutons.<br/>Le nom de chacun de ces éléments est donné par l'attribut `fx:id`.
 
 Complétez la classe `CounterController` en déclarant les attributs correspondant aux éléments du fichier *fxml* et annotez-les avec `@FXML`. Initialisez le texte du `Label` avec la chaîne *"0"*.
