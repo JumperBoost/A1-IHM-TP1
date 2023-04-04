@@ -79,9 +79,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <mainClass>fr.umontpellier.iut.exercice3.MaPremiereFenetreJavaFX</mainClass>
-                </configuration>
             </plugin>
 
             <plugin>
