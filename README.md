@@ -122,7 +122,7 @@ Cette fenêtre est déplaçable, mais pas redimensionnable. Pour cela, vous pouv
 Les 9 éléments sont des `Label`, dont vous aurez défini les "graphiques" en utilisant les 3 fichiers qui sont fournis dans le répertoire _resources/exercice2_. Pour cela, déclarez un objet de la classe [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) et utilisez la méthode `setGraphic(Node n)` sur le label. Notez que cette méthode reçoit un objet de type `Node` de JavaFX en paramètre et [`ImageView`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/image/ImageView.html) est une de ses nombreuses sous-classes. Pour créer un objet `ImageView`, il faut lui passer en paramètre du constructeur la chaîne de caractères correspondante au chemin relatif vers la ressource :
 
 ```java
-ImageView image = new ImageView("resources/exercice2/Croix.png");
+ImageView image = new ImageView("exercice2/Croix.png");
 label.setGraphic(image);
 ```
 
