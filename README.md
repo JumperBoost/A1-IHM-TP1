@@ -103,7 +103,7 @@ Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. 
 **Quelques indications :**
 * Réfléchissez au type du conteneur que vous allez utiliser pour la racine de votre graphe de scène. Pensez à consulter les sous-classes de la classe [`Pane`](https://openjfx.io/javadoc/18/javafx.graphics/javafx/scene/layout/Pane.html).
 * La barre de menus ([`MenuBar`](https://openjfx.io/javadoc/18/javafx.controls/javafx/scene/control/MenuBar.html)) est composé de 3 menus : _File_, _Edit_ et _Help_. Les menus _File_ et _Edit_ contiennent chacun les sous-items suivants :
-    * _File_ &longrightarrow; _New_, _Open_, _Edit_ et _Close_
+    * _File_ &longrightarrow; _New_, _Open_, _Save_ et _Close_
     * _Edit_ &longrightarrow; _Cut_, _Copy_ et _Paste_.
 
   Le menu _Help_ ne contient aucun autre sous-item.
@@ -160,7 +160,7 @@ A la fin de chaque question, vous ferez exécuter votre nouvelle version de l'ap
    [URL](https://gitlabinfo.iutmontp.univ-montp2.fr/ihm/tp1/-/raw/master/images/logo.jpeg) et utilisez la méthode `setGraphic(Node n)` sur le bouton.<br/>
    Changez la fonte du `TextField` en Courier 15 (`Font.font("Courier", FontWeight.NORMAL, 15)`) et celle du `Label` en 30 et bold.<br/>
    Essayez aussi de changer l'image du bouton en utilisant la ressource *"Bonjour.jpg"* qui vous est fournie dans le répertoire _src/main/resources/exercice3/_.<br/>
-   Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice1/Bonjour.css").toExternalForm());`.</ul>
+   Enfin, utilisez le fichier *"Bonjour.css"* pour configurer la scène, en utilisant <ul> `scene.getStylesheets().add(getClass().getClassLoader().getResource("exercice3/Bonjour.css").toExternalForm());`.</ul>
 
 ### Exercice 4 - Conteneurs BorderPane et HBox
 
