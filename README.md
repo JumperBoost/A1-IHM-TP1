@@ -182,7 +182,7 @@ Vous utiliserez pour cela un conteneur `BorderPane` (taille 400 sur 200), dont l
 
 Dans un jeu PacMan les personnages (classe `Personnage`) ont tous un corps sous forme de cercle et une direction de déplacement.
 
-- Un objet de type `Pacman` sera un `Personnage` qui comporte _une bouche_, la bouche est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
+- Un objet de type `Pacman` sera un `Personnage` qui comporte _une bouche_. Celle-ci est orientée vers la droite, gauche, bas, haut en fonction de sa direction.
 
 - Un objet de type `Fantome` sera un `Personnage` qui comporte _un bas de corps_, _un œil gauche_, _une rétine gauche_, _un œil droit_ et _une rétine droite_, les rétines seront orientées en fonction de sa direction.
 
@@ -192,12 +192,12 @@ Dans un jeu PacMan les personnages (classe `Personnage`) ont tous un corps sous 
 
 - La classe `JeuMain` est chargée de lancer le jeu dans une fenêtre 640*480, chaque personnage est pour l’instant stocké dans un carré de 20 pixels de côté.
 
-**Diagramme de classes :**
+**Diagramme de classes du code qui vous est fourni :**
 
 <img src="images/exo5/pacmandiagclasses.png" width="700"/>
 
 
-Le _code fourni_ permet d’afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
+Le _code fourni_ permet d'afficher le plan de jeu, un pacman qui se dirige vers la **droite** ou vers la **gauche**, un fantôme **qui ne bouge pas** pour l’instant.
 
 
 **État initial :**
