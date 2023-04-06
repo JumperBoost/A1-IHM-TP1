@@ -152,7 +152,7 @@ Pour commencer simplement, nous allons construire une petite application graphiq
       ```
       Une action de clic sur ce bouton aura pour effet de transformer le texte du `Label` en *"Bonjour à toi, César"*, quand le texte *César* a été saisi dans le `TextField`.
 
-    * Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amener à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici, vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
+    * Transformez ensuite l'expression lambda en un attribut `final` de la classe, de type `EventHandler<ActionEvent>`. Vous serez amené à déplacer vos composants, qui deviennent maintenant des attributs de la classe. Ici, vous avez la possibilité d'instancier votre attribut `EventHandler<ActionEvent>` en tant que [classe anonyme](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html) ou bien en tant qu'objet d'une classe héritant de `EventHandler<ActionEvent>` que vous allez déclarer explicitement.
 
     * Faites en sorte qu'en tapant la touche _Entrée_ du clavier lors de la saisie du `TextField`, la même action que le clic du bouton, se déclenche. Ici, vous utiliserez une méthode de convenance ```setOnAction(...)```.
 
