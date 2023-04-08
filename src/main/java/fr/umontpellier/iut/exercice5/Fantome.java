@@ -30,11 +30,11 @@ public class Fantome extends Personnage {
         retineDroite = new Circle(oeilDroit.getCenterX() + 1, 6, 1, Color.BLACK);
 
 
-        this.getChildren().add(basCorps);
-        this.getChildren().add(oeilGauche);
-        this.getChildren().add(retineGauche);
-        this.getChildren().add(oeilDroit);
-        this.getChildren().add(retineDroite);
+        super.getChildren().add(basCorps);
+        super.getChildren().add(oeilGauche);
+        super.getChildren().add(retineGauche);
+        super.getChildren().add(oeilDroit);
+        super.getChildren().add(retineDroite);
     }
 
     @Override
