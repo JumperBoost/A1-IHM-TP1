@@ -239,7 +239,7 @@ Le _code fourni_ permet d'afficher le plan de jeu, un pacman qui se dirige vers 
 Dans cet exercice, vous allez réaliser une interface graphique du jeu du pendu, jeu qui consiste à découvrir un mot caché en proposant des lettres successivement, jusqu'à l'avoir trouvé, mais dans la limite d'un certain nombre de vies (le joueur est alors "pendu"...).
 <br/>Pour mettre en place le jeu, on vous fournit une classe Dico, qui correspond à un petit dictionnaire contenant donc une liste de mots. On peut l'utiliser grâce aux deux méthodes publiques suivantes :
 - `String getMot()` qui retourne un mot, extrait de la liste de mots de façon aléatoire à chaque appel,
-- `ArrayList<Integer> getPositions(char lettre, String mot)` qui retourne la liste des positions d'un caractère dans une chaîne de caractères. Si ce caractère ne se trouve pas dans la chaîne de caractères, le résultat est `null`.
+- `ArrayList<Integer> getPositions(char lettre, String mot)` qui retourne la liste des positions d'un caractère dans une chaîne de caractères. Si ce caractère ne se trouve pas dans la chaîne de caractères, le résultat est une liste vide.
 
 Vous allez construire cette interface de façon incrémentale, en suivant par exemple la démarche proposée un peu plus bas.
 Vous pouvez vous inspirer d'une IHM qui ressemblerait à cela :
