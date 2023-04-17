@@ -305,4 +305,4 @@ Regardez (et exécutez) le code fourni dans la classe `Animation`, et transforme
 
 ### Exercice 10 - Conteneurs et FXML
 
-Reprenez l'exercice 1 (Conteneurs de base) pour réaliser l'interface en utilisant FXML et SceneBuilder.
+Reprenez l'exercice 1 (Conteneurs de base) pour réaliser l'interface en utilisant FXML et SceneBuilder. Vous pouvez ajouter un contrôleur à votre fichier *fxml* pour gérer les actions des différents composants de votre application.
