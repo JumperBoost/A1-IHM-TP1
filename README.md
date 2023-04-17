@@ -302,3 +302,7 @@ Un clic sur le bouton _OK_ affiche sur la console le nom de l'utilisateur et une
 ### Exercice 9 - Animations
 
 Regardez (et exécutez) le code fourni dans la classe `Animation`, et transformez-le pour que l'image fasse le tour de la fenêtre, puis revienne automatiquement en sens inverse.
+
+### Exercice 10 - Conteneurs et FXML
+
+Reprenez l'exercice 1 (Conteneurs de base) pour réaliser l'interface en utilisant FXML et SceneBuilder.
