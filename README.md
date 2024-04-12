@@ -102,9 +102,10 @@ Dans les exercices de cette partie, vous allez personnaliser votre fenêtre Java
 A la fin de chaque question/exercice, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement sur votre dépôt GitLab.
 
 ### Exercice 1 - Conteneurs de base
-Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci :
+Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci (sous Linux à gauche et sous Windows à droite) :
 
-![](images/exo1/FenetrePrincipale.png)
+![](images/exo1/FenetrePrincipaleLinux.png)
+![](images/exo1/FenetrePrincipaleWindows.png)
 
 **Quelques indications :**
 * Réfléchissez au type du conteneur que vous allez utiliser pour la racine de votre graphe de scène. Pensez à consulter les sous-classes de la classe [`Pane`](https://openjfx.io/javadoc/20/javafx.graphics/javafx/scene/layout/Pane.html).
