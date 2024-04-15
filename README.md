@@ -47,6 +47,9 @@ C'est pour cela que la librairie JavaFX n'est pas automatiquement installée ave
 * Sur Linux, il suffit d'extraire l'archive contenant la SDK dans votre répertoire d'installation, par exemple dans `/opt`.
 * Lors de la première utilisation de JavaFX avec votre IDE, vous devriez indiquer le chemin d'accès à la SDK JavaFX sur votre machine.
 
+## Consignes avant de commencer le TP
+Regarder le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) et si vous n'avez pas suivi le premier amphi, regarder l'enregistrement. Dans ce qui va suivre vous aurez énormément de questions, donc sans avoir regardé le cours, vous allez accumuler beaucoup de retard.
+
 ## TP 1 : Premiers pas avec JavaFX
 
 Rappelez-vous que JavaFX est un framework Java pour le développement des interfaces graphiques (GUI) en Java. Une GUI JavaFX est construite grâce à un **graphe de scène**, où les **nœuds** correspondent à un ensemble d'éléments graphiques organisés de manière hiérarchique. La scène (un objet de type [`Scene`](https://openjfx.io/javadoc/20/javafx.graphics/javafx/scene/Scene.html)) est associée à une fenêtre qui correspond à un objet de type [`Stage`](https://openjfx.io/javadoc/20/javafx.graphics/javafx/stage/Stage.html).
@@ -102,7 +105,7 @@ Dans les exercices de cette partie, vous allez personnaliser votre fenêtre Java
 A la fin de chaque question/exercice, vous ferez exécuter votre nouvelle version de l'application. Pensez aussi à committer (et pousser) régulièrement sur votre dépôt GitLab.
 
 ### Exercice 1 - Conteneurs de base
-Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci (sous Linux d'abord et sous Windows ensuite) :
+Manipulons les conteneurs JavaFX pour vous entrainer à organiser votre scène. Écrivez une application JavaFX qui affiche une fenêtre comme celle-ci (la première image illustre l'affichage sous Ubuntu et la seconde illustre l'affichage sous Windows) :
 
 ![](images/exo1/FenetrePrincipaleLinux.png)
 ![](images/exo1/FenetrePrincipaleWindows.png)
