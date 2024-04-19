@@ -40,15 +40,13 @@ Tout au long du TP, vous aurez besoin de **consulter [les pages de documentation
 
 #### Consignes installation sur machine personnelle
 
-Notez que depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main).
-
-C'est pour cela que la librairie JavaFX n'est pas automatiquement installée avec la plateforme Java. Si vous utilisez une machine du département, alors à priori JavaFX est installé. Si vous utilisez votre machine personnelle :
-* On vous recommande de télécharger la SDK complète : https://gluonhq.com/products/javafx/
+Depuis 2018 JavaFX ne fait pas partie de l'API Java officielle, le développement étant externalisé dans la communauté [OpenJDK](https://openjdk.java.net/) dans le projet [OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main). C'est pour cela que la librairie JavaFX n'est pas automatiquement installée avec la plateforme Java. Mais comme vous allez construire vos projets avec Maven, toutes les dépendances vers JavaFX sont déjà décrites dans le fichier `pom.xml` et à priori, il n'y a rien à installer. Cependant, votre IDE parfois peut être capricieux, et il est possible que vous ayez besoin d'installer JavaFX sur votre machine personnelle pour qu'il puisse exécuter vos applications JavaFX. Si vous utilisez une machine du département, alors à priori JavaFX est installé (version 20). Si vous utilisez votre machine personnelle ou si vous voulez mettre à jour votre installation JavaFX, voici les étapes à suivre :
+* On vous recommande de télécharger la SDK complète (choisissez la version 21 LTS) : https://gluonhq.com/products/javafx/
 * Sur Linux, il suffit d'extraire l'archive contenant la SDK dans votre répertoire d'installation, par exemple dans `/opt`.
-* Lors de la première utilisation de JavaFX avec votre IDE, vous devriez indiquer le chemin d'accès à la SDK JavaFX sur votre machine.
+* Comme dit précédemment, à priori, votre IDE détectera la configuration Maven et aura ce qu'il faut pour exécuter correctement votre code. Si tout de même il vous demande d'indiquer le chemin d'accès à la SDK JavaFX sur votre machine, alors sur IntelliJ IDEA, allez dans `File` &rightarrow; `Project Structure` &rightarrow; `Libraries` et ajoutez le chemin d'accès au répertoire `lib` de la SDK JavaFX.
 
 ## Consignes avant de commencer le TP
-Regarder le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf) et si vous n'avez pas suivi le premier amphi, regarder l'enregistrement. Dans ce qui va suivre vous aurez énormément de questions, donc sans avoir regardé le cours, vous allez accumuler beaucoup de retard.
+Regardez le [cours](https://www.lirmm.fr/~pvalicov/Cours/ihm/Introduction_handout.pdf). Et si vous n'avez pas suivi le premier amphi, regardez l'enregistrement du cours sur Moodle. Dans ce qui va suivre, vous aurez énormément de questions, donc sans avoir regardé le cours, vous allez être rapidement bloqué et risquez d'accumuler beaucoup de retard... Par exemple, les exemples de code donnés en cours souvent rassemblent à ce qui vous est demandé dans les exercices.
 
 ## TP 1 : Premiers pas avec JavaFX
 
@@ -294,13 +292,12 @@ Associez enfin les fichiers `CounterController.java` et `CounterView.fxml` en aj
 
 ### Exercice 8 - Création de l'IHM en FXML et SceneBuilder
 
-Constatez, dans la classe `LoginControl`, que nous définissons ici un nouveau contrôle, basé sur un `GridPane`, et qui pourra donc être utilisé par la suite comme un nouveau composant en soi. C'est d'ailleurs ce qui est fait dans la classe `LoginMain`.
 
-Vous allez utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant le fichier *fxml* donné :
+Vous allez utiliser le [SceneBuilder](https://gluonhq.com/products/scene-builder/) pour construire la fenêtre suivante (la racine de la scène étant un conteneur `GridPane`), en complétant ce fichier *fxml* (fourni dans le répertoire *"resources/exercice8"*):
 
 ![](images/Exo8.png)
 
-Pour ouvrir le fichier *fxml* avec [SceneBuilder](https://gluonhq.com/products/scene-builder/) dans IntelliJ IDEA : clic droit sur le fichier *fxml* &rightarrow; *Open in SceneBuilder*. Si vous utilisez le SceneBuilder pour la première fois, il faut indiquer à l'IDE le chemin d'accès à l'exécutable de ce logiciel. À l'IUT, sur les postes Linux, il réside dans `/opt/scenebuilder/bin/`. Si vous êtes sur votre machine personnelle, il faudrait que vous installiez d'abord [SceneBuilder](https://gluonhq.com/products/scene-builder/) et ensuite indiquiez à l'IDE le chemin d'accès.
+Pour ouvrir le fichier *fxml* avec [SceneBuilder](https://gluonhq.com/products/scene-builder/) dans IntelliJ IDEA : clic droit sur le fichier *fxml* &rightarrow; *Open in SceneBuilder*. Si vous utilisez le SceneBuilder pour la première fois, il faut indiquer à l'IDE le chemin d'accès à l'exécutable de ce logiciel. Sur les machines de l'IUT, sur les postes Linux, il réside dans `/opt/scenebuilder/bin/`. Si vous êtes sur votre machine personnelle, il faudrait que vous installiez d'abord [SceneBuilder](https://gluonhq.com/products/scene-builder/) et ensuite indiquiez à l'IDE le chemin d'accès.
 
 Le fichier *CSS* vous est fourni, il n'est pas nécessaire de le modifier. Vous l'associerez à votre contrôle en utilisant la possibilité du panneau _Properties_ de la racine.
 
