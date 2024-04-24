@@ -68,7 +68,7 @@ public class FenetreLogiciel extends Application {
         grid_form.addRow(1, email_label, email_text);
 
         Label password_label = new Label("Password:");
-        TextField password_text = new TextField();
+        PasswordField password_text = new PasswordField();
         grid_form.addRow(2, password_label, password_text);
 
         Button submit_button = new Button("Submit");
