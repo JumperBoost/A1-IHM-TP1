@@ -10,7 +10,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class TicTacToe extends Application {
 
@@ -22,19 +24,13 @@ public class TicTacToe extends Application {
         grid.setVgap(5);
         grid.setBorder(new Border(new BorderStroke(null, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(5))));
 
-        Label label1 = new Label();
-        label1.setGraphic(new ImageView("exercice2/Croix.png"));
-
-        List<Integer> croix_pos = new ArrayList<>(List.of(1, 2, 8));
-        List<Integer> rond_pos = new ArrayList<>(List.of(0, 3, 4, 5));
-        String croix_path = "exercice2/Croix.png";
-        String rond_path = "exercice2/Rond.png";
-        String vide_path = "exercice2/Vide.png";
+        List<String> images_path = new ArrayList<>(Arrays.asList("exercice2/Croix.png", "exercice2/Rond.png", "exercice2/Vide.png"));
+        Random random = new Random();
         for(int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 Label label = new Label();
                 label.setBackground(Background.fill(Paint.valueOf("dddddd")));
-                label.setGraphic(croix_pos.contains(i * 3 + j) ? new ImageView(croix_path) : (rond_pos.contains(i * 3 + j) ? new ImageView(rond_path) : new ImageView(vide_path)));
+                label.setGraphic(new ImageView(images_path.get(random.nextInt(3))));
                 grid.addRow(i, label);
             }
         }
