@@ -10,8 +10,12 @@ class Personnage extends Group {
     private final Circle corps;
     private String direction;
 
+    private double previousX, previousY;
+
     public Personnage(String direction, Color couleurContour, Color couleurRemplissage) {
         this.direction = direction;
+        previousX = 0;
+        previousY = 0;
         corps = new Circle(10, 10, LARGEUR_MOITIE_PERSONNAGE, couleurContour);
         corps.setFill(couleurRemplissage);
         getChildren().add(corps);
@@ -83,4 +87,20 @@ class Personnage extends Group {
                 || autrePersonnage.getBoundsInParent().contains(getBoundsInParent());
     }
 
+    boolean estEnCollisionAvecEnvironnement() {
+        for(Obstacle obstacle : JeuMain.getObstacles())
+            if(obstacle.estEnCollision(getLayoutX(), getLayoutY()))
+                return true;
+        return false;
+    }
+
+    public void saveCurrentCoords() {
+        previousX = getLayoutX();
+        previousY = getLayoutY();
+    }
+
+    public void setToPreviousCoords() {
+        setLayoutX(previousX);
+        setLayoutY(previousY);
+    }
 }

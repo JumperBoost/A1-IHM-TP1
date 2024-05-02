@@ -5,17 +5,23 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class JeuMain extends Application {
 
     private Scene scene;
     private BorderPane root;
 
+    private static List<Obstacle> obstacles;
+
     @Override
     public void start(Stage primaryStage) {
-
         root = new BorderPane();
+        obstacles = new ArrayList<>();
 
         //Acteurs du jeu
         Personnage pacman = new Pacman();
@@ -28,6 +34,10 @@ public class JeuMain extends Application {
         jeu.getChildren().add(pacman);
         jeu.getChildren().add(fantome);
         root.setCenter(jeu);
+        // on ajoute les obstacles
+        obstacles.add(new Obstacle(60, 180, 120, 80, Paint.valueOf("#A62A2A")));
+        obstacles.add(new Obstacle(40, 240, 480, 140, Paint.valueOf("#A62A2A")));
+        jeu.getChildren().addAll(obstacles);
         //on construit une scene 640 * 480 pixels
         scene = new Scene(root);
 
@@ -67,14 +77,39 @@ public class JeuMain extends Application {
                     break;
 
                 case Z:
-                    //j2...... vers le haut;
+                    j2.deplacerEnHaut();
                     break;
 
+                case S:
+                    j2.deplacerEnBas(scene.getHeight());
+                    break;
+
+                case Q:
+                    j2.deplacerAGauche();
+                    break;
+
+                case D:
+                    j2.deplacerADroite(scene.getWidth());
+                    break;
             }
-            if (j1.estEnCollision(j2))
-                System.out.println("Collision....");
+
+            if(j1.estEnCollision(j2) || j2.estEnCollisionAvecEnvironnement()) {
+                System.out.println("Pacman gagné.");
+                j1.setToPreviousCoords();
+                j2.setToPreviousCoords();
+                scene.setOnKeyPressed(null);
+            } else if(j1.estEnCollisionAvecEnvironnement()) {
+                System.out.println("Fantôme gagné.");
+                j1.setToPreviousCoords();
+                scene.setOnKeyPressed(null);
+            } else {
+                j1.saveCurrentCoords();
+                j2.saveCurrentCoords();
+            }
         });
     }
 
-
+    public static List<Obstacle> getObstacles() {
+        return obstacles;
+    }
 }
